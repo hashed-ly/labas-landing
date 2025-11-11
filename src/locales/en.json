@@ -1,0 +1,250 @@
+{
+  "hero": {
+    "title": "Labas — Your health, organized.",
+    "subtitle": "Book appointments, message doctors, and access reports securely — all in one app.",
+    "downloadButton": "Download App",
+    "dashboardButton": "Organization Dashboard"
+  },
+  "features": {
+    "title": "Your health, simplified.",
+    "easyAppointments": {
+      "title": "Easy Appointments",
+      "description": "Schedule with doctors and clinics in seconds."
+    },
+    "accessResults": {
+      "title": "Access Your Results",
+      "description": "Review tests and medical reports anytime."
+    },
+    "secureMessaging": {
+      "title": "Secure Messaging",
+      "description": "Chat directly and safely with providers."
+    },
+    "healthRecord": {
+      "title": "Unified Health Record",
+      "description": "Store and share your health data securely."
+    }
+  },
+  "organizations": {
+    "title": "Smart tools for smarter care.",
+    "centralDashboard": {
+      "title": "Central Dashboard",
+      "description": "Manage all bookings from one place."
+    },
+    "smartScheduling": {
+      "title": "Smart Scheduling",
+      "description": "Optimize doctors' time automatically."
+    },
+    "unifiedCalendar": {
+      "title": "Unified Calendar",
+      "description": "View all upcoming appointments easily."
+    },
+    "flexibleManagement": {
+      "title": "Flexible Management",
+      "description": "Edit or cancel appointments instantly."
+    }
+  },
+  "security": {
+    "title": "Your data. Safe and private.",
+    "description": "We use state-of-the-art encryption to protect your medical information. Your data is yours alone."
+  },
+  "about": {
+    "title": "From Benghazi to all of Libya",
+    "description": "Labas is a comprehensive medical application that aims to seamlessly connect patients with doctors and hospitals. Whether you are looking to consult a doctor, manage appointments, or access reliable health services, Labas provides a safe and easy-to-use platform that meets all your medical needs.",
+    "paragraph1": "Labas aims to simplify healthcare access for everyone — enabling individuals to book appointments, access reports, and chat securely with doctors — while empowering clinics and hospitals with intelligent tools for scheduling and appointment management.",
+    "vision": "Our vision is a connected digital health future that makes healthcare simpler for people and more efficient for providers across Libya."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "We're here to answer your questions and help you get started.",
+    "location": "Forth Ring Road, Benghazi, Libya",
+    "email": "support{'@'}labas.ly",
+    "phone": "+218 91-057 9911",
+    "developer": {
+      "name": "Labas Health Services Company",
+      "email": "salah{'@'}labas.ly",
+      "phone": "+218 91-376 0133"
+    },
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number (optional)",
+      "message": "Your Message",
+      "submit": "Send Message"
+    }
+  },
+  "cta": {
+    "title": "Start your health journey with Labas today.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "footer": {
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "location": "Benghazi – Libya",
+    "copyright": "© 2024 Labas – All rights reserved",
+    "language": {
+      "ar": "العربية",
+      "en": "English"
+    }
+  },
+  "nav": {
+    "features": "Features",
+    "solutions": "Solutions",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "Everything you need to know",
+    "subtitle": "Quick answers about how to use Labas and its services.",
+    "stillHaveQuestions": "Still have questions?",
+    "contactUs": "Contact Us",
+    "items": {
+      "appointments": {
+        "question": "How do I book a medical appointment?",
+        "answer": "Open the app, choose the medical facility or doctor that suits you, then select the time and date that works best. You'll receive instant confirmation through the app and can easily manage your appointments."
+      },
+      "security": {
+        "question": "Is my health data secure?",
+        "answer": "Yes, we use advanced medical-grade encryption to protect all your health information. Your data belongs to you alone and is never shared with any party without your explicit consent."
+      },
+      "records": {
+        "question": "Can I access my test results and medical reports?",
+        "answer": "Absolutely! All your test results and medical reports are available in your unified health record within the app. You can view them anytime and share them with your doctor when needed."
+      },
+      "support": {
+        "question": "How do I contact the support team?",
+        "answer": "You can reach us via email at support{'@'}labas.ly or call us at +218 91-057 9911. Our team is available to help with any inquiries."
+      },
+      "organizations": {
+        "question": "Can clinics and hospitals use Labas?",
+        "answer": "Yes! We provide a comprehensive dashboard for medical institutions to manage appointments, smart scheduling, and unified calendar views. Contact us to learn more about our solutions for organizations."
+      },
+      "cost": {
+        "question": "Is the app free?",
+        "answer": "Yes, the Labas app is free to download and use. You can book appointments and access our core services at no cost. Some advanced services may require a subscription depending on the medical institution."
+      }
+    }
+  },
+  "privacy": {
+    "badge": "Privacy Policy",
+    "title": "Privacy Policy",
+    "intro": "This policy applies to all users within the State of Libya. By using the 'LABAS' application, you agree to the terms set forth in this policy, which aims to protect your privacy, the security of your personal information, and ensure transparency in how we handle your data.",
+    "ownership": "The LABAS application is owned, fully managed, and supported by Gate Company For Information Technology, which is responsible for processing and protecting your personal information as described in this policy.",
+    "section1": {
+      "title": "1. Information We Collect",
+      "intro": "The 'LABAS' application collects information you provide during your use of the application, including:",
+      "registration": {
+        "title": "Registration Information:",
+        "items": {
+          "name": "Full name",
+          "phone": "Phone number",
+          "city": "City",
+          "bloodType": "Blood type",
+          "password": "Password",
+          "picture": "Profile picture (optional)"
+        }
+      },
+      "location": {
+        "title": "Location Data:",
+        "description": "We may collect and use your device's geolocation data to identify the nearest healthcare providers to you. This is done after obtaining your permission to use location services on your device."
+      },
+      "payment": {
+        "title": "Payment Information:",
+        "description": "When charging the 'LABAS' wallet, you must enter the necessary payment information, such as information related to electronic payment cards used in accordance with the available and approved payment systems in Libya."
+      },
+      "documents": {
+        "title": "Document Images:",
+        "description": "Images of medical prescriptions and medical test requests that you submit through the application are collected to facilitate the provision of the required services."
+      },
+      "other": {
+        "title": "Other Data:",
+        "description": "Information collected through your inquiries, complaints, or comments when communicating with customer service."
+      }
+    },
+    "section2": {
+      "title": "2. How We Use Your Information",
+      "intro": "We use the information we collect to provide and improve our services and ensure a safe and seamless user experience. Uses include:",
+      "uses": {
+        "services": "Providing services: Processing your requests, such as booking medical appointments, ordering medications, or requesting tests.",
+        "communication": "Communicating with you: Sending notifications or updates related to your account or requests, responding to your inquiries or complaints through the call center.",
+        "improvement": "Improving services: Analyzing data to develop the application and add new features that meet user needs.",
+        "marketing": "Marketing: Sending promotional offers, discounts, or information about our services, with the option to unsubscribe at any time."
+      }
+    },
+    "section3": {
+      "title": "3. Sharing Your Information",
+      "intro": "With Third Parties: Your personal information is shared only in the following cases:",
+      "parties": {
+        "providers": "Service providers: We only share this information with your consent when you make a booking of an appointment with the service provider if they need it.",
+        "suppliers": "Suppliers: to ensure the provision of services as required.",
+        "government": "Government authorities: if we are legally required to share the information pursuant to court orders or applicable laws."
+      },
+      "confidentiality": {
+        "title": "Ensuring Confidentiality:",
+        "standards": "We require the third parties we deal with to follow the same data protection standards that we apply.",
+        "noSale": "We will not sell or rent your personal information to any third party under any circumstances."
+      }
+    },
+    "section4": {
+      "title": "4. Information Security",
+      "intro": "We are committed to taking appropriate technical and organizational measures to protect your personal information from unauthorized access, loss, or damage. These measures include:",
+      "measures": {
+        "encryption": "Encrypting data during transmission and storage.",
+        "passwords": "Protecting accounts with strong passwords.",
+        "monitoring": "Continuous monitoring of security systems."
+      },
+      "disclaimer": "However, the security of information cannot be guaranteed completely due to the nature of the internet. Therefore, we advise you to protect your account information and not share it with others.",
+      "management": "Gate Company For Information Technology manages and implements all technical and organizational measures to protect your data on the LABAS application."
+    },
+    "section5": {
+      "title": "5. User Rights",
+      "rights": {
+        "access": {
+          "title": "Access to Information",
+          "description": "You have the right to request a copy of the personal information we hold about you."
+        },
+        "modify": {
+          "title": "Modifying Information",
+          "description": "You can modify your personal data or correct errors in it through your account settings."
+        },
+        "delete": {
+          "title": "Deleting Information",
+          "description": "You can request the deletion of your personal information from our records or cancel your account. However, we may retain some data for a specific period if required by law."
+        },
+        "unsubscribe": {
+          "title": "Unsubscribing",
+          "description": "As a user, you have the right to stop receiving any marketing messages from the application at any time. Unsubscribing from marketing messages will not affect the receipt of important notifications related to your account or the services you have requested."
+        }
+      }
+    },
+    "section6": {
+      "title": "6. Changes to the Privacy Policy",
+      "description": "The 'LABAS' application reserves the right to modify or update the Privacy Policy at any time. Users will be notified of any material changes through in-app notifications or by sending them via email to registered accounts. These amendments shall be effective 7 days from the date of notification."
+    },
+    "section7": {
+      "title": "7. Data Retention",
+      "description": "Your personal data is retained only as long as it is necessary to provide services or to comply with legal obligations. Upon the expiration of the purpose of data collection or upon your request, we delete the data or anonymize it securely."
+    },
+    "section8": {
+      "title": "8. Children's Privacy Policy",
+      "description": "The 'LABAS' application is not designed for use by children under the age of 18 without parental supervision. If we discover that we have collected information about a child without parental consent, we will delete it immediately."
+    },
+    "section9": {
+      "title": "9. Contact Us",
+      "intro": "If you have any questions or complaints regarding the Privacy Policy, you can contact us via:",
+      "contact": {
+        "email": "Email",
+        "phone1": "'LABAS' Call Center",
+        "phone2": "'LABAS' Call Center",
+        "app": "Through the application via the 'Contact Us' feature."
+      }
+    },
+    "section10": {
+      "title": "10. Applicable Laws",
+      "description": "This policy is subject to the provisions of data protection legislation in Libya. In case of any dispute regarding this policy, the Libyan courts shall have jurisdiction."
+    }
+  }
+}
