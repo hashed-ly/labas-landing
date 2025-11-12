@@ -126,16 +126,47 @@ labas-landing/
 
 ## 🌐 Internationalization
 
-The site uses vue-i18n with:
+The site uses Vue I18n v11 with enhanced features:
 
 - **Default Language**: Arabic (`ar`)
 - **Fallback Language**: English (`en`)
-- **Direction Toggle**: Automatically updates `<html lang>` and `dir` attributes
-- **Font Switching**: CSS automatically applies correct font based on direction
+- **Locale Persistence**: User's language choice is saved to localStorage
+- **Type Safety**: TypeScript autocomplete for translation keys
+- **Validation**: Automatic checking for missing translations on build
+- **Safe Translations**: Fallback support with error handling
+- **RTL Support**: Full right-to-left layout support
+
+### Quick Start
+
+```vue
+<script setup>
+import { useI18n } from '@/composables/useI18n';
+const { t, locale, toggleLocale } = useI18n();
+</script>
+
+<template>
+  <h1>{{ t('hero.title') }}</h1>
+  <button @click="toggleLocale">Switch Language</button>
+</template>
+```
+
+### Translation Management
+
+```bash
+# Validate all translations match
+npm run validate:i18n
+
+# Build (runs validation first)
+npm run build
+```
+
+**📖 For detailed i18n documentation, see [I18N_GUIDE.md](docs/I18N_GUIDE.md)**
 
 ### Adding Translations
 
-Edit `src/locales/ar.json` and `src/locales/en.json` to add or modify translations.
+1. Add keys to both `src/locales/ar.json` and `src/locales/en.json`
+2. Run `npm run validate:i18n` to verify
+3. Use `t('your.key')` in components
 
 ## ♿ Accessibility
 
