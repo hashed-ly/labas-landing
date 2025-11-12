@@ -48,7 +48,7 @@ const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
               class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 pt-4 md:pt-8"
             >
               <a
-                href="#"
+                href="https://apps.apple.com/ly/app/%D9%84%D8%A7%D8%A8%D8%A7%D8%B3-labas-appointments/id6746457351"
                 class="inline-block"
                 aria-label="Download on the App Store"
               >
