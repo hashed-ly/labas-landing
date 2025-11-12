@@ -3,7 +3,7 @@ import { useI18n } from '../composables/useI18n';
 import { useIntersectionObserver } from '../composables/useIntersectionObserver';
 
 const { t } = useI18n();
-const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
+const { targetRef, isVisible } = useIntersectionObserver();
 </script>
 
 <template>

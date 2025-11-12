@@ -36,7 +36,7 @@ onUnmounted(() => {
     <header
       class="fixed top-0 start-0 end-0 z-50 transition-all duration-300"
       :class="
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
       "
     >
       <div class="container mx-auto px-4 sm:px-6">
@@ -54,7 +54,7 @@ onUnmounted(() => {
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-8">
               <a
-                href="#about-brief"
+                href="#about"
                 class="text-md font-medium text-text/70 hover:text-text transition-colors"
               >
                 {{ t('nav.about') }}
@@ -212,7 +212,7 @@ onUnmounted(() => {
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main class="snap-y snap-mandatory">
       <Hero />
       <AboutBrief />
       <Features />

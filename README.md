@@ -18,12 +18,16 @@ A modern, bilingual (Arabic/English) landing page for the Labas healthcare appli
 
 - 🌐 **RTL-First Design**: Default Arabic (RTL) with seamless English (LTR) toggle
 - ⚡ **Modern Stack**: Vue 3 Composition API, Tailwind CSS v4, Vue Router, Vue I18n
-- 🌍 **Bilingual Support**: Complete Arabic and English translations
+- 🌍 **Bilingual Support**: Complete Arabic and English translations with persistence
 - ♿ **Accessible**: Semantic HTML, ARIA labels, keyboard navigation, WCAG AA compliant
-- 🔍 **SEO Optimized**: Proper meta tags, bilingual descriptions, structured data
+- 🔍 **SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards, structured data (JSON-LD)
 - 🚀 **Performance**: Lazy-loaded images, optimized fonts, smooth scroll animations
 - 🎨 **Brand Consistency**: Custom design tokens for colors, typography, and spacing
-- 📱 **Fully Responsive**: Mobile-first design that works on all devices
+- 📱 **Fully Responsive**: Mobile-first design optimized for all devices
+- ✨ **Splash Screen**: Beautiful animated splash screen on first visit
+- 🖼️ **Image Optimization**: Smart lazy loading with priority hints
+- 🗺️ **Interactive Map**: D3.js-powered Libya coverage map with city selection and facility listings
+- 🎬 **Smart Animations**: Scroll-triggered animations that activate when sections are centered
 
 ## 🚀 Getting Started
 
@@ -45,11 +49,15 @@ npm run dev
 
 Visit `http://localhost:5173` to see the site in Arabic (default).
 
+**Note:** The splash screen appears once per session. Clear `sessionStorage` to see it again.
+
 ### Build for Production
 
 ```bash
 npm run build
 ```
+
+Automatically validates translations before building.
 
 ### Preview Production Build
 
@@ -70,14 +78,16 @@ labas-landing/
 ├── src/
 │   ├── components/
 │   │   ├── Hero.vue         # Hero section with phone mockups
-│   │   ├── AboutBrief.vue   # Brief about section with map
+│   │   ├── AboutBrief.vue   # Brief about section with interactive map
+│   │   ├── LibyaCoverageMap.vue # Interactive D3.js map with city selection
 │   │   ├── Features.vue     # User features grid (4 cards)
 │   │   ├── Organizations.vue # Services for healthcare providers
 │   │   ├── Security.vue     # Security & privacy section
 │   │   ├── FAQ.vue          # Frequently asked questions
 │   │   ├── Contact.vue      # Contact form and information
 │   │   ├── CTA.vue          # Download call-to-action
-│   │   └── Privacy.vue      # Privacy policy page
+│   │   ├── Privacy.vue      # Privacy policy page
+│   │   └── SplashScreen.vue # Animated splash screen
 │   ├── composables/
 │   │   ├── useI18n.js       # i18n composable with locale toggle
 │   │   └── useIntersectionObserver.js # Scroll animations
@@ -168,6 +178,19 @@ npm run build
 2. Run `npm run validate:i18n` to verify
 3. Use `t('your.key')` in components
 
+## 🔍 SEO Optimization
+
+The site includes comprehensive SEO features:
+
+- **Meta Tags**: Title, description, keywords, robots, theme-color
+- **Open Graph**: Full OG tags for social media sharing (title, description, image, type, locale)
+- **Twitter Cards**: Optimized Twitter sharing cards (summary_large_image)
+- **Structured Data**: JSON-LD schema for Organization with contact information
+- **Canonical URLs**: Proper canonical links for all pages
+- **Hreflang Tags**: Language alternates for Arabic/English versions
+- **Semantic HTML**: Proper heading hierarchy (h1-h6) and ARIA landmarks
+- **Bilingual Support**: Separate meta descriptions and titles per language
+
 ## ♿ Accessibility
 
 - Semantic HTML5 elements
@@ -187,20 +210,22 @@ The site is fully responsive with breakpoints at:
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| [Vue 3](https://vuejs.org/) | ^3.5.13 | Progressive JavaScript framework |
-| [Vite](https://vitejs.dev/) | ^6.0.3 | Next-generation frontend tooling |
-| [Tailwind CSS](https://tailwindcss.com/) | v4 (next) | Utility-first CSS framework |
-| [Vue Router](https://router.vuejs.org/) | ^4.5.0 | Official Vue.js router |
-| [Vue I18n](https://vue-i18n.intlify.dev/) | ^10.0.5 | Internationalization plugin |
-| [Flowbite Vue](https://flowbite-vue.com/) | ^0.1.7 | UI component library |
+| [Vue 3](https://vuejs.org/) | ^3.5.24 | Progressive JavaScript framework |
+| [Vite](https://vitejs.dev/) | ^7.2.2 | Next-generation frontend tooling |
+| [Tailwind CSS](https://tailwindcss.com/) | v4 | Utility-first CSS framework |
+| [Vue Router](https://router.vuejs.org/) | ^4.6.3 | Official Vue.js router |
+| [Vue I18n](https://vue-i18n.intlify.dev/) | ^11.1.12 | Internationalization plugin |
+| [D3 Geo](https://d3js.org/d3-geo) | ^3.1.1 | Geographic projections for map |
 
 ## 🎬 Animations
 
-The site features scroll-triggered animations using the Intersection Observer API:
+The site features intelligent scroll-triggered animations using the Intersection Observer API:
 
 - **Fade-in-up**: Elements fade in and slide up when scrolled into view
+- **Centered Activation**: Animations trigger when sections reach ~50% viewport visibility for better UX
 - **Staggered delays**: Sequential animations for lists and grids
 - **Smooth transitions**: All interactive elements have smooth hover/focus states
+- **Performance Optimized**: Respects `prefers-reduced-motion` for accessibility
 
 ## 🚧 Development Notes
 
@@ -221,18 +246,33 @@ When using `@` symbols in translation strings, escape them with `{'@'}`:
 }
 ```
 
-### Performance Tips
+### Performance & Images
 
-- ✅ Images are lazy-loaded with `loading="lazy"`
+- ✅ Images are lazy-loaded with `loading="lazy"` (below fold)
+- ✅ Hero images use `loading="eager"` and `fetchpriority="high"`
 - ✅ Google Fonts are preloaded with `display=swap`
-- ✅ Critical assets use `loading="eager"`
-- 💡 Consider using image CDN for production
+- ✅ Splash screen cached per session with `sessionStorage`
+- 📖 See [IMAGE_OPTIMIZATION.md](docs/IMAGE_OPTIMIZATION.md) for optimization guide
+
+**Recommended:** Convert images to WebP format for 80-90% size reduction without quality loss.
 
 ### Browser Support
 
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 - RTL support tested on Arabic-locale browsers
+
+## 🗺️ Interactive Map Features
+
+The Libya Coverage Map component includes:
+
+- **City Selection**: Interactive buttons to switch between Benghazi, Tripoli, and Misrata
+- **Auto-Focus**: Map automatically centers on selected city with locale-aware positioning
+- **Facility Listings**: Collapsible panels showing hospitals, clinics, and labs per city
+- **Zoom Controls**: Interactive zoom in/out and reset buttons
+- **Brand Markers**: Custom SVG brand marks replace standard map pins
+- **Mobile Optimized**: Responsive layout with collapsed lists by default on mobile
+- **RTL Support**: Full right-to-left layout support for Arabic interface
 
 ## 🐛 Known Issues
 

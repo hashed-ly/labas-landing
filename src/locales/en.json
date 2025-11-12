@@ -1,4 +1,7 @@
 {
+  "splash": {
+    "tagline": "Your health, organized."
+  },
   "hero": {
     "title": "Labas — Your health, organized.",
     "subtitle": "Book appointments, message doctors, and access reports securely — all in one app.",
@@ -48,10 +51,22 @@
     "description": "We use state-of-the-art encryption to protect your medical information. Your data is yours alone."
   },
   "about": {
-    "title": "From Benghazi to all of Libya",
-    "description": "Labas is a comprehensive medical application that aims to seamlessly connect patients with doctors and hospitals. Whether you are looking to consult a doctor, manage appointments, or access reliable health services, Labas provides a safe and easy-to-use platform that meets all your medical needs.",
-    "paragraph1": "Labas aims to simplify healthcare access for everyone — enabling individuals to book appointments, access reports, and chat securely with doctors — while empowering clinics and hospitals with intelligent tools for scheduling and appointment management.",
-    "vision": "Our vision is a connected digital health future that makes healthcare simpler for people and more efficient for providers across Libya."
+    "title": "One platform for all of Libya",
+    "description": "Labas connects patients, doctors, and hospitals across Libya through a secure and intuitive digital experience.",
+    "paragraph1": "We deliver smart tools for booking appointments, tracking medical results, and chatting with healthcare providers, while empowering clinics and hospitals with powerful scheduling and operations dashboards.",
+    "vision": "Our vision is a unified digital health network that improves care for people and boosts efficiency for medical teams in every city.",
+    "map": {
+      "title": "Nationwide coverage across key cities",
+      "subtitle": "Hover or tap a city to explore connected hospitals and clinics.",
+      "cityStats": "%{clinics} clinics • %{hospitals} hospitals",
+      "listTitle": "Labas network in %{city}",
+      "empty": "Select a city to view available medical partners.",
+      "types": {
+        "hospital": "Hospital",
+        "clinic": "Clinic",
+        "lab": "Lab"
+      }
+    }
   },
   "contact": {
     "title": "Get in Touch",

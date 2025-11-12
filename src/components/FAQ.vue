@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import { useI18n } from '../composables/useI18n';
 import { useIntersectionObserver } from '../composables/useIntersectionObserver';
 
-const { t } = useI18n();
-const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+const { t, locale } = useI18n();
+const { targetRef, isVisible } = useIntersectionObserver();
 
 const faqs = [
   { key: 'appointments' },
@@ -73,7 +73,7 @@ const toggle = (key) => {
                 t(`faq.items.${faq.key}.question`)
               }}</span>
               <svg
-                class="w-6 h-6 flex-shrink-0 transition-transform duration-200"
+                class="w-6 h-6 shrink-0 transition-transform duration-200"
                 :class="{ 'rotate-180': openItem === faq.key }"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -122,6 +122,7 @@ const toggle = (key) => {
           {{ t('faq.contactUs') }}
           <svg
             class="w-5 h-5"
+            :class="{ 'rotate-180': locale === 'ar' }"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

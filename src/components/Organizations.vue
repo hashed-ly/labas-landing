@@ -2,8 +2,8 @@
 import { useI18n } from '../composables/useI18n';
 import { useIntersectionObserver } from '../composables/useIntersectionObserver';
 
-const { t } = useI18n();
-const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+const { t, locale } = useI18n();
+const { targetRef, isVisible } = useIntersectionObserver();
 
 const services = [
   {

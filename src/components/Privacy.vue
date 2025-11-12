@@ -323,7 +323,7 @@ onUnmounted(() => {
                 <ul class="space-y-3">
                   <li class="flex items-start gap-3">
                     <svg
-                      class="w-6 h-6 text-secondary flex-shrink-0 mt-0.5"
+                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -339,7 +339,7 @@ onUnmounted(() => {
                   </li>
                   <li class="flex items-start gap-3">
                     <svg
-                      class="w-6 h-6 text-secondary flex-shrink-0 mt-0.5"
+                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -355,7 +355,7 @@ onUnmounted(() => {
                   </li>
                   <li class="flex items-start gap-3">
                     <svg
-                      class="w-6 h-6 text-secondary flex-shrink-0 mt-0.5"
+                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -371,7 +371,7 @@ onUnmounted(() => {
                   </li>
                   <li class="flex items-start gap-3">
                     <svg
-                      class="w-6 h-6 text-secondary flex-shrink-0 mt-0.5"
+                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >

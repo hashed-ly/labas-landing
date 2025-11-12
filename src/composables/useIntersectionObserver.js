@@ -19,8 +19,14 @@ export function useIntersectionObserver(options = {}) {
         }
       },
       {
-        threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || '0px',
+        threshold:
+          options.threshold !== undefined && options.threshold !== null
+            ? options.threshold
+            : 0.25,
+        rootMargin:
+          options.rootMargin !== undefined && options.rootMargin !== null
+            ? options.rootMargin
+            : '-10% 0px -25% 0px',
       }
     );
 
@@ -40,4 +46,3 @@ export function useIntersectionObserver(options = {}) {
     isVisible,
   };
 }
-

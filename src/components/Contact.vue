@@ -4,7 +4,7 @@ import { useI18n } from '../composables/useI18n';
 import { useIntersectionObserver } from '../composables/useIntersectionObserver';
 
 const { t, locale } = useI18n();
-const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+const { targetRef, isVisible } = useIntersectionObserver();
 
 const formData = ref({
   name: '',
@@ -29,7 +29,7 @@ const handleSubmit = () => {
       <div class="max-w-6xl mx-auto">
         <!-- Section Header -->
         <div
-          class="text-center mb-16"
+          class="text-center mb-16 flex flex-col items-center justify-center"
           :class="{ 'opacity-0': !isVisible, 'animate-fade-in-up': isVisible }"
         >
           <h2 class="text-4xl md:text-5xl font-bold text-text mb-4">
@@ -64,10 +64,10 @@ const handleSubmit = () => {
                 <!-- Location -->
                 <div class="flex items-start gap-4">
                   <div
-                    class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                    class="shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center"
                   >
                     <svg
-                      class="w-6 h-6 text-primary"
+                      class="w-6 h-6 text-secondary"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -89,7 +89,7 @@ const handleSubmit = () => {
                 <!-- Email -->
                 <div class="flex items-start gap-4">
                   <div
-                    class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center"
+                    class="shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center"
                   >
                     <svg
                       class="w-6 h-6 text-secondary"
@@ -121,10 +121,10 @@ const handleSubmit = () => {
                 <!-- Phone -->
                 <div class="flex items-start gap-4">
                   <div
-                    class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center"
+                    class="shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center"
                   >
                     <svg
-                      class="w-6 h-6 text-accent"
+                      class="w-6 h-6 text-secondary"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -213,7 +213,7 @@ const handleSubmit = () => {
 
           <!-- Contact Form -->
           <div
-            class="bg-bg rounded-2xl p-8 shadow-soft"
+            class="bg-bg rounded-2xl p-8 shadow"
             :class="{
               'opacity-0': !isVisible,
               'animate-fade-in-up delay-200': isVisible,
@@ -285,7 +285,7 @@ const handleSubmit = () => {
 
               <button
                 type="submit"
-                class="w-full px-6 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium hover:shadow-lg hover:scale-105 transition-all"
+                class="w-full px-6 py-4 bg-secondary text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
               >
                 {{ locale === 'ar' ? 'إرسال الرسالة' : 'Send Message' }}
               </button>
