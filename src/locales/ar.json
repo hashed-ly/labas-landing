@@ -9,7 +9,8 @@
     "dashboardButton": "لوحة التحكم للمؤسسات"
   },
   "features": {
-    "title": "صحتك… في متناول يدك",
+    "title": "صحتك...",
+    "titleSuffix": "في متناول يدك",
     "easyAppointments": {
       "title": "حجز المواعيد بسهولة",
       "description": "اختر الطبيب والمكان والوقت المناسب لك خلال ثوانٍ."
@@ -88,7 +89,8 @@
     }
   },
   "cta": {
-    "title": "ابدأ رحلتك الصحية <br /> مع لا باس اليوم",
+    "title": "ابدأ رحلتك الصحية",
+    "titleSuffix": "مع لا باس اليوم",
     "appStore": "App Store",
     "googlePlay": "Google Play"
   },

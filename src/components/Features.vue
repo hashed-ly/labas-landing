@@ -30,7 +30,9 @@ const features = [
     <div class="container mx-auto px-6">
       <div class="text-center mb-16" :class="{ 'opacity-0': !isVisible, 'animate-fade-in-up': isVisible }">
         <h2 class="text-4xl md:text-5xl font-bold text-text mb-4">
-          {{ t('features.title') }}
+          <span>{{ t('features.title') }}</span>
+          <br />
+          <span>{{ t('features.titleSuffix') }}</span>
         </h2>
       </div>
 

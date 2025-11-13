@@ -254,8 +254,8 @@ const typeLabels = computed(() => ({
 
 const facilityPanelPosition = computed(() =>
   locale.value === 'ar'
-    ? 'md:right-4 lg:right-24 md:translate-x-[35%] lg:-translate-x-[90%] lg:translate-y-[15%]'
-    : 'md:left-4 lg:left-24 md:-translate-x-[35%] lg:translate-x-[90%] lg:translate-y-[15%]'
+    ? 'md:right-2 lg:right-4 xl:right-24 md:rtl:translate-x-[-50%] md:rtl:-translate-y-10 lg:translate-x-[35%] xl:-translate-x-[90%] lg:translate-y-[15%]'
+    : 'md:left-2 lg:left-4 xl:left-24 md:ltr:translate-x-[10%] md:ltr:-translate-y-12 lg:-translate-x-[35%] xl:translate-x-[90%] lg:translate-y-[15%]'
 );
 
 const isFacilitiesCollapsed = computed(() => {
@@ -444,7 +444,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="space-y-8 p-0 md:px-8 md:py-4">
+  <div class="space-y-8 p-0 md:px-8 md:py-4 md:ms-8">
     <div class="flex flex-col gap-3">
       <h3 class="text-2xl font-semibold text-text">
         {{ t('about.map.title') }}
@@ -554,12 +554,8 @@ onUnmounted(() => {
         </transition>
 
         <div
-          class="relative w-full max-w-sm mx-auto md:mx-0 md:absolute md:top-6 md:w-[260px] md:max-w-[72vw] sm:w-[280px] lg:w-[310px] rounded-3xl border border-secondary/20 shadow-soft p-4 space-y-4 transition-transform duration-500 transform z-30 flex flex-col h-fit"
-          :class="[
-            facilityPanelPosition,
-            panelTranslationClass,
-            locale === 'ar' ? 'bg-white/95' : 'bg-white/85 backdrop-blur-md',
-          ]"
+          class="relative w-full max-w-sm mx-auto md:mx-0 md:absolute md:top-6 md:w-[240px] lg:w-[260px] xl:w-[310px] md:max-w-[none] rounded-3xl border border-secondary/20 shadow-soft p-4 space-y-4 transition-transform duration-500 transform z-30 flex flex-col h-fit backdrop-blur-md bg-white/55"
+          :class="[facilityPanelPosition, panelTranslationClass]"
         >
           <div
             v-if="selectedCityData"

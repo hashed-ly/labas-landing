@@ -36,7 +36,9 @@ onUnmounted(() => {
     <header
       class="fixed top-0 start-0 end-0 z-50 transition-all duration-300"
       :class="
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        isScrolled
+          ? 'bg-white/85 backdrop-blur-md shadow-sm'
+          : 'md:bg-transparent bg-white'
       "
     >
       <div class="container mx-auto px-4 sm:px-6">
@@ -201,7 +203,7 @@ onUnmounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 @click="mobileMenuOpen = false"
-                class="mx-4 px-4 py-3 bg-primary text-white text-sm font-medium rounded-lg text-center hover:bg-primary/90 transition-colors"
+                class="mx-4 px-4 py-3 bg-primary !text-white text-sm font-medium rounded-lg text-center hover:bg-primary/90 transition-colors"
               >
                 {{ locale === 'ar' ? 'تحميل التطبيق' : 'Download App' }}
               </a>

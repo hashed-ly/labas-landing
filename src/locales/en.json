@@ -9,7 +9,8 @@
     "dashboardButton": "Organization Dashboard"
   },
   "features": {
-    "title": "Your health, simplified.",
+    "title": "Your health...",
+    "titleSuffix": "simplified.",
     "easyAppointments": {
       "title": "Easy Appointments",
       "description": "Schedule with doctors and clinics in seconds."
@@ -88,7 +89,8 @@
     }
   },
   "cta": {
-    "title": "Start your health journey with Labas today.",
+    "title": "Start your health journey",
+    "titleSuffix": "with Labas today.",
     "appStore": "App Store",
     "googlePlay": "Google Play"
   },

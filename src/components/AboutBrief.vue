@@ -13,16 +13,16 @@ const isArabic = computed(() => locale.value === 'ar');
 <template>
   <section
     id="about"
-    class="relative py-16 md:py-32 bg-bg transition-all duration-700 overflow-hidden snap-start snap-always md:h-screen"
+    class="relative py-16 md:py-32 bg-bg transition-all duration-700 overflow-hidden snap-start snap-always lg:h-screen"
     ref="targetRef"
   >
     <div class="container mx-auto px-4 sm:px-6 relative">
       <div
-        class="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-10 md:gap-12 lg:gap-16 items-start max-w-6xl mx-auto"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-6 md:gap-2 lg:gap-12 xl:gap-16 items-start max-w-6xl mx-auto"
       >
         <!-- Text Content -->
         <div
-          class="relative z-20 space-y-6 px-5 sm:px-6"
+          class="relative z-20 space-y-6 px-5 md:ps-6 md:pe-0"
           :class="{ 'opacity-0': !isVisible, 'animate-fade-in-up': isVisible }"
         >
           <span
@@ -33,7 +33,7 @@ const isArabic = computed(() => locale.value === 'ar');
             class="pointer-events-none absolute -inset-12 sm:-inset-16 -z-20 rounded-[140px] sm:rounded-[160px] bg-secondary/10 blur-[90px] sm:blur-[120px]"
             aria-hidden="true"
           ></span>
-          <h2 class="text-4xl md:text-5xl font-bold text-text leading-tight">
+          <h2 class="text-4xl lg:text-5xl font-bold text-text leading-tight">
             {{ t('about.title') }}
           </h2>
 
@@ -108,8 +108,8 @@ const isArabic = computed(() => locale.value === 'ar');
           class="relative w-full md:max-w-3xl lg:max-w-4xl transform mt-10 md:mt-0"
           :class="[
             isArabic
-              ? 'md:translate-x-14 lg:translate-x-20 md:pe-10 lg:pe-14'
-              : 'md:-translate-x-10 lg:-translate-x-16 md:ps-10 lg:ps-14',
+              ? 'md:translate-x-8 lg:translate-x-14 xl:translate-x-20 md:pe-6 lg:pe-10 xl:pe-14'
+              : 'md:-translate-x-6 lg:-translate-x-10 xl:-translate-x-16 md:ps-6 lg:ps-10 xl:ps-14',
             {
               'opacity-0': !isVisible,
               'animate-fade-in-up delay-200': isVisible,

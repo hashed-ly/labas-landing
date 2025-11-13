@@ -33,9 +33,11 @@ const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
             }"
           >
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
             >
-              <span v-html="t('cta.title')"></span>
+              <span>{{ t('cta.title') }}</span>
+              <br />
+              <span>{{ t('cta.titleSuffix') }}</span>
             </h2>
 
             <p
