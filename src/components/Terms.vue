@@ -215,14 +215,14 @@ onUnmounted(() => {
                 class="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4"
               >
                 <span class="text-sm font-medium text-primary">
-                  {{ t('privacy.badge') }}
+                  {{ t('terms.badge') }}
                 </span>
               </div>
-              <h1 class="text-4xl md:text-5xl font-bold text-text mb-6">
-                {{ t('privacy.title') }}
+              <h1 class="text-4xl md:text-5xl font-bold text-text mb-4">
+                {{ t('terms.title') }}
               </h1>
-              <p class="text-lg text-text/70">
-                {{ t('privacy.intro') }}
+              <p class="text-sm text-text/60 mb-6">
+                {{ t('terms.effectiveDate') }}
               </p>
             </div>
 
@@ -234,310 +234,273 @@ onUnmounted(() => {
                   class="bg-accent/10 border-s-4 border-accent rounded-lg p-6 mb-8"
                 >
                   <p class="text-text/90 leading-relaxed mb-0">
-                    {{ t('privacy.ownership') }}
+                    {{ t('terms.ownership') }}
                   </p>
                 </div>
               </div>
-
-              <!-- Section 1: Information We Collect -->
+              <!-- Section 1 -->
               <div class="mb-12">
                 <h2 class="text-2xl font-bold text-text mb-4">
-                  {{ t('privacy.section1.title') }}
+                  {{ t('terms.section1.title') }}
                 </h2>
-                <p class="text-text/80 leading-relaxed mb-6">
-                  {{ t('privacy.section1.intro') }}
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section1.description') }}
                 </p>
-
-                <div class="space-y-6">
-                  <div>
-                    <h3 class="text-xl font-semibold text-text mb-3">
-                      {{ t('privacy.section1.registration.title') }}
-                    </h3>
-                    <ul class="list-disc list-inside space-y-2 text-text/80">
-                      <li>
-                        {{ t('privacy.section1.registration.items.name') }}
-                      </li>
-                      <li>
-                        {{ t('privacy.section1.registration.items.phone') }}
-                      </li>
-                      <li>
-                        {{ t('privacy.section1.registration.items.city') }}
-                      </li>
-                      <li>
-                        {{ t('privacy.section1.registration.items.bloodType') }}
-                      </li>
-                      <li>
-                        {{ t('privacy.section1.registration.items.password') }}
-                      </li>
-                      <li>
-                        {{ t('privacy.section1.registration.items.picture') }}
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 class="text-xl font-semibold text-text mb-3">
-                      {{ t('privacy.section1.location.title') }}
-                    </h3>
-                    <p class="text-text/80 leading-relaxed">
-                      {{ t('privacy.section1.location.description') }}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 class="text-xl font-semibold text-text mb-3">
-                      {{ t('privacy.section1.payment.title') }}
-                    </h3>
-                    <p class="text-text/80 leading-relaxed">
-                      {{ t('privacy.section1.payment.description') }}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 class="text-xl font-semibold text-text mb-3">
-                      {{ t('privacy.section1.documents.title') }}
-                    </h3>
-                    <p class="text-text/80 leading-relaxed">
-                      {{ t('privacy.section1.documents.description') }}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 class="text-xl font-semibold text-text mb-3">
-                      {{ t('privacy.section1.other.title') }}
-                    </h3>
-                    <p class="text-text/80 leading-relaxed">
-                      {{ t('privacy.section1.other.description') }}
-                    </p>
-                  </div>
-                </div>
               </div>
 
-              <!-- Section 2: How We Use Your Information -->
+              <!-- Section 2 -->
               <div class="mb-12">
                 <h2 class="text-2xl font-bold text-text mb-4">
-                  {{ t('privacy.section2.title') }}
+                  {{ t('terms.section2.title') }}
                 </h2>
-                <p class="text-text/80 leading-relaxed mb-6">
-                  {{ t('privacy.section2.intro') }}
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section2.description') }}
                 </p>
-                <ul class="space-y-3">
-                  <li class="flex items-start gap-3">
-                    <svg
-                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <span class="text-text/80">{{
-                      t('privacy.section2.uses.services')
-                    }}</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <svg
-                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <span class="text-text/80">{{
-                      t('privacy.section2.uses.communication')
-                    }}</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <svg
-                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <span class="text-text/80">{{
-                      t('privacy.section2.uses.improvement')
-                    }}</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <svg
-                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <span class="text-text/80">{{
-                      t('privacy.section2.uses.marketing')
-                    }}</span>
-                  </li>
-                </ul>
               </div>
 
-              <!-- Section 3: Sharing Your Information -->
+              <!-- Section 3 -->
               <div class="mb-12">
                 <h2 class="text-2xl font-bold text-text mb-4">
-                  {{ t('privacy.section3.title') }}
+                  {{ t('terms.section3.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section3.description') }}
+                </p>
+              </div>
+
+              <!-- Section 4 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section4.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section4.description') }}
+                </p>
+              </div>
+
+              <!-- Section 5 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section5.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section5.description') }}
+                </p>
+              </div>
+
+              <!-- Section 6 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section6.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section6.description') }}
+                </p>
+              </div>
+
+              <!-- Section 7 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section7.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section7.description') }}
+                </p>
+              </div>
+
+              <!-- Section 8 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section8.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section8.description') }}
+                </p>
+              </div>
+
+              <!-- Section 9 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section9.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section9.description') }}
+                </p>
+              </div>
+
+              <!-- Section 10 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section10.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section10.description') }}
+                </p>
+              </div>
+
+              <!-- Section 11 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section11.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section11.description') }}
+                </p>
+              </div>
+
+              <!-- Section 12 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section12.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section12.description') }}
+                </p>
+              </div>
+
+              <!-- Section 13 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section13.title') }}
                 </h2>
                 <p class="text-text/80 leading-relaxed mb-4">
-                  {{ t('privacy.section3.intro') }}
+                  {{ t('terms.section13.description') }}
                 </p>
-                <ul class="space-y-2 mb-6 text-text/80">
-                  <li>• {{ t('privacy.section3.parties.providers') }}</li>
-                  <li>• {{ t('privacy.section3.parties.suppliers') }}</li>
-                  <li>• {{ t('privacy.section3.parties.government') }}</li>
+                <ul class="space-y-2 text-text/80">
+                  <li>• {{ t('terms.section13.phone1') }}</li>
+                  <li>• {{ t('terms.section13.phone2') }}</li>
+                  <li>• {{ t('terms.section13.email') }}</li>
                 </ul>
-                <div class="bg-bg rounded-lg p-6">
-                  <h3 class="text-lg font-semibold text-text mb-3">
-                    {{ t('privacy.section3.confidentiality.title') }}
-                  </h3>
-                  <p class="text-text/80 leading-relaxed mb-3">
-                    {{ t('privacy.section3.confidentiality.standards') }}
-                  </p>
-                  <p class="text-text/80 leading-relaxed">
-                    {{ t('privacy.section3.confidentiality.noSale') }}
-                  </p>
-                </div>
               </div>
 
-              <!-- Section 4: Information Security -->
+              <!-- Section 14 -->
               <div class="mb-12">
                 <h2 class="text-2xl font-bold text-text mb-4">
-                  {{ t('privacy.section4.title') }}
+                  {{ t('terms.section14.title') }}
                 </h2>
-                <p class="text-text/80 leading-relaxed mb-6">
-                  {{ t('privacy.section4.intro') }}
-                </p>
-                <ul class="space-y-2 mb-6 text-text/80">
-                  <li>• {{ t('privacy.section4.measures.encryption') }}</li>
-                  <li>• {{ t('privacy.section4.measures.passwords') }}</li>
-                  <li>• {{ t('privacy.section4.measures.monitoring') }}</li>
-                </ul>
-                <p class="text-text/70 text-sm italic">
-                  {{ t('privacy.section4.disclaimer') }}
-                </p>
-                <p class="text-text/80 leading-relaxed mt-4">
-                  {{ t('privacy.section4.management') }}
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section14.description') }}
                 </p>
               </div>
 
-              <!-- Section 5: User Rights -->
+              <!-- Section 15 -->
               <div class="mb-12">
                 <h2 class="text-2xl font-bold text-text mb-4">
-                  {{ t('privacy.section5.title') }}
+                  {{ t('terms.section15.title') }}
                 </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                  <div class="bg-bg rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-text mb-2">
-                      {{ t('privacy.section5.rights.access.title') }}
-                    </h3>
-                    <p class="text-text/70 text-sm">
-                      {{ t('privacy.section5.rights.access.description') }}
-                    </p>
-                  </div>
-                  <div class="bg-bg rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-text mb-2">
-                      {{ t('privacy.section5.rights.modify.title') }}
-                    </h3>
-                    <p class="text-text/70 text-sm">
-                      {{ t('privacy.section5.rights.modify.description') }}
-                    </p>
-                  </div>
-                  <div class="bg-bg rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-text mb-2">
-                      {{ t('privacy.section5.rights.delete.title') }}
-                    </h3>
-                    <p class="text-text/70 text-sm">
-                      {{ t('privacy.section5.rights.delete.description') }}
-                    </p>
-                  </div>
-                  <div class="bg-bg rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-text mb-2">
-                      {{ t('privacy.section5.rights.unsubscribe.title') }}
-                    </h3>
-                    <p class="text-text/70 text-sm">
-                      {{ t('privacy.section5.rights.unsubscribe.description') }}
-                    </p>
-                  </div>
-                </div>
+                <p class="text-text/80 leading-relaxed mb-3">
+                  {{ t('terms.section15.description') }}
+                </p>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section15.note') }}
+                </p>
               </div>
 
-              <!-- Remaining Sections -->
-              <div class="space-y-12">
-                <div>
-                  <h2 class="text-2xl font-bold text-text mb-4">
-                    {{ t('privacy.section6.title') }}
-                  </h2>
-                  <p class="text-text/80 leading-relaxed">
-                    {{ t('privacy.section6.description') }}
-                  </p>
-                </div>
+              <!-- Section 16 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section16.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed mb-4">
+                  {{ t('terms.section16.description') }}
+                </p>
+                <ul class="space-y-2 text-text/80">
+                  <li>• {{ t('terms.section16.emergencyPhone') }}</li>
+                  <li>• {{ t('terms.section16.emergencyEmail') }}</li>
+                </ul>
+              </div>
 
-                <div>
-                  <h2 class="text-2xl font-bold text-text mb-4">
-                    {{ t('privacy.section7.title') }}
-                  </h2>
-                  <p class="text-text/80 leading-relaxed">
-                    {{ t('privacy.section7.description') }}
-                  </p>
-                </div>
+              <!-- Section 17 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section17.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section17.description') }}
+                </p>
+              </div>
 
-                <div>
-                  <h2 class="text-2xl font-bold text-text mb-4">
-                    {{ t('privacy.section8.title') }}
-                  </h2>
-                  <p class="text-text/80 leading-relaxed">
-                    {{ t('privacy.section8.description') }}
-                  </p>
-                </div>
+              <!-- Section 18 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section18.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section18.description') }}
+                </p>
+              </div>
 
-                <div>
-                  <h2 class="text-2xl font-bold text-text mb-4">
-                    {{ t('privacy.section9.title') }}
-                  </h2>
-                  <p class="text-text/80 leading-relaxed mb-4">
-                    {{ t('privacy.section9.intro') }}
-                  </p>
-                  <ul class="space-y-2 text-text/80">
-                    <li>
-                      • {{ t('privacy.section9.contact.email') }}:
-                      support@labas.ly
-                    </li>
-                    <li>
-                      • {{ t('privacy.section9.contact.phone1') }}: +218 91-057
-                      9911
-                    </li>
-                    <li>
-                      • {{ t('privacy.section9.contact.phone2') }}: +218 92-057
-                      9911
-                    </li>
-                    <li>• {{ t('privacy.section9.contact.app') }}</li>
-                  </ul>
-                </div>
+              <!-- Section 19 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section19.title') }}
+                </h2>
+                <ul class="space-y-3 text-text/80">
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span>{{ t('terms.section19.obligation1') }}</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-6 h-6 text-secondary shrink-0 mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span>{{ t('terms.section19.obligation2') }}</span>
+                  </li>
+                </ul>
+              </div>
 
-                <div>
-                  <h2 class="text-2xl font-bold text-text mb-4">
-                    {{ t('privacy.section10.title') }}
-                  </h2>
-                  <p class="text-text/80 leading-relaxed">
-                    {{ t('privacy.section10.description') }}
-                  </p>
-                </div>
+              <!-- Section 20 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section20.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed mb-3">
+                  {{ t('terms.section20.description1') }}
+                </p>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section20.description2') }}
+                </p>
+              </div>
+
+              <!-- Section 21 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section21.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed mb-3">
+                  {{ t('terms.section21.description1') }}
+                </p>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section21.description2') }}
+                </p>
+              </div>
+
+              <!-- Section 22 -->
+              <div class="mb-12">
+                <h2 class="text-2xl font-bold text-text mb-4">
+                  {{ t('terms.section22.title') }}
+                </h2>
+                <p class="text-text/80 leading-relaxed">
+                  {{ t('terms.section22.description') }}
+                </p>
               </div>
             </div>
 

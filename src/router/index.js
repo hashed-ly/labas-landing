@@ -9,9 +9,14 @@ const router = createRouter({
       component: () => import('../layouts/MainLayout.vue'),
     },
     {
-      path: '/privacy',
+      path: '/v1/Privacy-and-Policy',
       name: 'privacy',
       component: () => import('../components/Privacy.vue'),
+    },
+    {
+      path: '/v1/terms-of-use',
+      name: 'terms',
+      component: () => import('../components/Terms.vue'),
     },
   ],
   scrollBehavior(to, from, savedPosition) {

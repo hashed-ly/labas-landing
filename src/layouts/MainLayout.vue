@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useI18n } from '../composables/useI18n';
+import { APP_LINKS } from '../constants';
 import Hero from '../components/Hero.vue';
 import AboutBrief from '../components/AboutBrief.vue';
 import Features from '../components/Features.vue';
@@ -86,7 +87,7 @@ onUnmounted(() => {
           <div class="flex items-center gap-3">
             <!-- Download Button -->
             <a
-              href="https://play.google.com/store/apps/details?id=ly.labas.app"
+              :href="APP_LINKS.onelink"
               target="_blank"
               rel="noopener noreferrer"
               class="hidden md:inline-flex px-5 py-2 bg-primary !text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
@@ -199,7 +200,7 @@ onUnmounted(() => {
               </a>
               <div class="border-t border-text/10 my-2"></div>
               <a
-                href="https://play.google.com/store/apps/details?id=ly.labas.app"
+                :href="APP_LINKS.onelink"
                 target="_blank"
                 rel="noopener noreferrer"
                 @click="mobileMenuOpen = false"
@@ -252,10 +253,16 @@ onUnmounted(() => {
               {{ t('footer.about') }}
             </a>
             <router-link
-              to="/privacy"
+              to="/v1/Privacy-and-Policy"
               class="block text-white/80 hover:text-white transition-colors"
             >
               {{ t('footer.privacy') }}
+            </router-link>
+            <router-link
+              to="/v1/terms-of-use"
+              class="block text-white/80 hover:text-white transition-colors"
+            >
+              {{ t('footer.terms') }}
             </router-link>
             <a
               href="#"
@@ -323,7 +330,7 @@ onUnmounted(() => {
         <div
           class="pt-8 border-t border-white/10 text-center text-white/60 text-sm"
         >
-          <p>{{ t('footer.copyright').replace('2024', currentYear) }}</p>
+          <p>{{ t('footer.copyright').replace('2025', currentYear) }}</p>
         </div>
       </div>
     </footer>
