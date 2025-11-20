@@ -4,7 +4,7 @@ import { useI18n as useVueI18n } from 'vue-i18n';
 const LOCALE_STORAGE_KEY = 'labas_preferred_locale';
 
 export function useI18n() {
-  const { locale, t } = useVueI18n();
+  const { locale, t, tm } = useVueI18n();
 
   // Load saved locale on init
   const savedLocale = localStorage.getItem(LOCALE_STORAGE_KEY);
@@ -46,6 +46,7 @@ export function useI18n() {
 
   return {
     t,
+    tm,
     locale: currentLocale,
     isRTL,
     direction,

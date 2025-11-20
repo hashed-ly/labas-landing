@@ -5,18 +5,29 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
       component: () => import('../layouts/MainLayout.vue'),
-    },
-    {
-      path: '/v1/Privacy-and-Policy',
-      name: 'privacy',
-      component: () => import('../components/Privacy.vue'),
-    },
-    {
-      path: '/v1/terms-of-use',
-      name: 'terms',
-      component: () => import('../components/Terms.vue'),
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: () => import('../pages/Home/HomePage.vue'),
+        },
+        {
+          path: '/solutions/app',
+          name: 'solutions-app',
+          component: () => import('../pages/Solutions/AppPage.vue'),
+        },
+        {
+          path: '/v1/Privacy-and-Policy',
+          name: 'privacy',
+          component: () => import('../components/Privacy.vue'),
+        },
+        {
+          path: '/v1/terms-of-use',
+          name: 'terms',
+          component: () => import('../components/Terms.vue'),
+        },
+      ],
     },
   ],
   scrollBehavior(to, from, savedPosition) {

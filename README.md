@@ -12,22 +12,23 @@
 
 ---
 
-A modern, bilingual (Arabic/English) landing page for the Labas healthcare application. Built with Vue 3, Tailwind CSS v4, and vue-i18n, featuring RTL-first design and smooth animations.
+A modern, bilingual (Arabic/English) landing page for the Labas healthcare application. Built with Vue 3, Tailwind CSS v4, and Sanity CMS, featuring RTL-first design, comprehensive design system, and a scalable architecture.
 
 ## ✨ Features
 
 - 🌐 **RTL-First Design**: Default Arabic (RTL) with seamless English (LTR) toggle
-- ⚡ **Modern Stack**: Vue 3 Composition API, Tailwind CSS v4, Vue Router, Vue I18n
-- 🌍 **Bilingual Support**: Complete Arabic and English translations with persistence
+- ⚡ **Modern Stack**: Vue 3 Composition API, Tailwind CSS v4, Sanity CMS, Vue Router
+- 🌍 **Bilingual Support**: Complete Arabic and English translations via CMS
+- 🎨 **Comprehensive Design System**: Full design tokens with color scales, typography, spacing, shadows
+- 🏗️ **Scalable Architecture**: Pages-based structure with reusable UI components
+- 🗄️ **Headless CMS**: Sanity CMS for content and translation management
 - ♿ **Accessible**: Semantic HTML, ARIA labels, keyboard navigation, WCAG AA compliant
-- 🔍 **SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards, structured data (JSON-LD)
-- 🚀 **Performance**: Lazy-loaded images, optimized fonts, smooth scroll animations
-- 🎨 **Brand Consistency**: Custom design tokens for colors, typography, and spacing
+- 🔍 **SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards
+- 🚀 **Performance**: Code splitting, lazy loading, optimized assets
 - 📱 **Fully Responsive**: Mobile-first design optimized for all devices
-- ✨ **Splash Screen**: Beautiful animated splash screen on first visit
-- 🖼️ **Image Optimization**: Smart lazy loading with priority hints
-- 🗺️ **Interactive Map**: D3.js-powered Libya coverage map with city selection and facility listings
-- 🎬 **Smart Animations**: Scroll-triggered animations that activate when sections are centered
+- 🧩 **UI Component Library**: Reusable Button, Input, Card, Badge, Modal components
+- 🗺️ **Interactive Map**: D3.js-powered Libya coverage map
+- 🎬 **Smart Animations**: Intersection Observer-based scroll animations
 
 ## 🚀 Getting Started
 
@@ -38,18 +39,33 @@ A modern, bilingual (Arabic/English) landing page for the Labas healthcare appli
 ### Installation
 
 ```bash
+# Install frontend dependencies
 npm install
+
+# Install Sanity Studio dependencies (optional)
+cd studio
+npm install
+cd ..
 ```
 
 ### Development
 
+**Frontend:**
 ```bash
 npm run dev
 ```
 
 Visit `http://localhost:5173` to see the site in Arabic (default).
 
-**Note:** The splash screen appears once per session. Clear `sessionStorage` to see it again.
+**Sanity Studio (optional):**
+```bash
+cd studio
+npx sanity dev
+```
+
+Visit `http://localhost:3333` to access the CMS.
+
+**Note:** The site can run without Sanity in development using fallback JSON translations.
 
 ### Build for Production
 
@@ -69,84 +85,101 @@ npm run preview
 
 ```
 labas-landing/
-├── public/
-│   └── images/
-│       ├── icons/           # App store badges, social icons
-│       ├── logos/           # Brand logos (horizontal, white variants)
-│       ├── screenshots/     # App mockups and phone screenshots
-│       └── Libya/           # Libya map SVG
+├── public/                  # Static assets
+│   └── images/              # Images and icons
 ├── src/
 │   ├── components/
-│   │   ├── Hero.vue         # Hero section with phone mockups
-│   │   ├── AboutBrief.vue   # Brief about section with interactive map
-│   │   ├── LibyaCoverageMap.vue # Interactive D3.js map with city selection
-│   │   ├── Features.vue     # User features grid (4 cards)
-│   │   ├── Organizations.vue # Services for healthcare providers
-│   │   ├── Security.vue     # Security & privacy section
-│   │   ├── FAQ.vue          # Frequently asked questions
-│   │   ├── Contact.vue      # Contact form and information
-│   │   ├── CTA.vue          # Download call-to-action
-│   │   ├── Privacy.vue      # Privacy policy page
-│   │   └── SplashScreen.vue # Animated splash screen
-│   ├── composables/
-│   │   ├── useI18n.js       # i18n composable with locale toggle
-│   │   └── useIntersectionObserver.js # Scroll animations
+│   │   ├── ui/              # Reusable UI components
+│   │   │   ├── Button.vue
+│   │   │   ├── Input.vue
+│   │   │   ├── Card.vue
+│   │   │   ├── Badge.vue
+│   │   │   └── Modal.vue
+│   │   ├── layout/          # Layout components
+│   │   │   ├── Header.vue
+│   │   │   ├── Footer.vue
+│   │   │   ├── Container.vue
+│   │   │   └── Section.vue
+│   │   └── [Legacy components...]
+│   ├── pages/               # Page components
+│   │   ├── Home/
+│   │   │   ├── HomePage.vue
+│   │   │   └── sections/    # Home page sections
+│   │   ├── Privacy/
+│   │   │   └── PrivacyPage.vue
+│   │   └── Terms/
+│   │       └── TermsPage.vue
 │   ├── layouts/
-│   │   └── MainLayout.vue   # Main layout with header & footer
+│   │   ├── BaseLayout.vue   # Base layout with slots
+│   │   └── MainLayout.vue   # Legacy main layout
+│   ├── composables/
+│   │   ├── useI18n.js       # Legacy i18n composable
+│   │   ├── useTranslation.js # Sanity-based translations
+│   │   ├── useSanityContent.js # Fetch content from CMS
+│   │   └── useIntersectionObserver.js
+│   ├── lib/
+│   │   └── sanity.js        # Sanity client configuration
 │   ├── locales/
-│   │   ├── ar.json          # Arabic translations
-│   │   └── en.json          # English translations
+│   │   ├── ar.json          # Fallback Arabic translations
+│   │   └── en.json          # Fallback English translations
 │   ├── router/
 │   │   └── index.js         # Vue Router configuration
-│   ├── App.vue              # Root component
-│   ├── i18n.js              # Vue I18n setup
-│   ├── main.js              # Application entry point
-│   ├── style.css            # Global styles & Tailwind imports
-│   └── tokens.js            # Design tokens (colors, fonts)
-├── index.html               # HTML entry point
-├── vite.config.js           # Vite configuration
-├── package.json             # Dependencies and scripts
-└── README.md                # This file
+│   ├── tokens.js            # Design system tokens
+│   ├── style.css            # Global styles with @theme
+│   └── main.js              # Application entry point
+├── studio/                  # Sanity CMS Studio
+│   ├── schemas/             # Content schemas
+│   │   ├── page.js
+│   │   ├── translation.js
+│   │   ├── navigation.js
+│   │   ├── siteSettings.js
+│   │   └── index.js
+│   ├── sanity.config.js
+│   └── package.json
+├── docs/                    # Documentation
+│   ├── ARCHITECTURE.md
+│   ├── DESIGN_SYSTEM.md
+│   ├── CMS_GUIDE.md
+│   └── I18N_GUIDE.md
+└── README.md
 ```
 
 ## 🎨 Design System
 
 ### Brand Colors
 
-| Token       | Value     | Usage              |
+Full color scales with 50-900 shades:
+
+| Token       | Base      | Usage              |
 | ----------- | --------- | ------------------ |
 | `primary`   | `#0B3954` | Main brand blue    |
 | `secondary` | `#087E8B` | Accent teal        |
 | `accent`    | `#EBC042` | Highlight yellow   |
 | `danger`    | `#D1444E` | Alert red          |
-| `bg`        | `#F6F8FA` | Background neutral |
-| `text`      | `#1E1E1E` | Primary text       |
+| `success`   | `#10B981` | Success states     |
+| `warning`   | `#F59E0B` | Warning states     |
 
 ### Typography
 
 - **Arabic Font**: Noto Kufi Arabic (400, 500, 700)
 - **English Font**: Urbanist (400, 500, 700)
-- **Body Weight**: 400 (normal), 500 (medium)
-- **Heading Weight**: 700 (bold)
+- **Font Sizes**: xs (12px) to 9xl (128px)
+- **Line Heights**: tight, normal, relaxed, loose
+- **Letter Spacing**: tighter to widest
 
-### Spacing & Borders
+### Spacing & Layout
 
-- **Border Radius**: `0.75rem` (base)
-- **Shadow**: `0 4px 12px rgba(0, 0, 0, 0.05)` (soft)
+- **Base Unit**: 4px
+- **Spacing Scale**: 0-96 (0-384px)
+- **Border Radius**: sm to 3xl + full
+- **Shadows**: sm to 2xl + custom (soft, glow)
+- **Breakpoints**: sm (640px) to 2xl (1536px)
+
+**📖 For complete design system docs, see [DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)**
 
 ## 🌐 Internationalization
 
-The site uses Vue I18n v11 with enhanced features:
-
-- **Default Language**: Arabic (`ar`)
-- **Fallback Language**: English (`en`)
-- **Locale Persistence**: User's language choice is saved to localStorage
-- **Type Safety**: TypeScript autocomplete for translation keys
-- **Validation**: Automatic checking for missing translations on build
-- **Safe Translations**: Fallback support with error handling
-- **RTL Support**: Full right-to-left layout support
-
-### Quick Start
+The site uses **JSON-based i18n** for all translations:
 
 ```vue
 <script setup>
@@ -160,23 +193,36 @@ const { t, locale, toggleLocale } = useI18n();
 </template>
 ```
 
+### Features
+
+- **Default Language**: Arabic (`ar`)
+- **Fallback Language**: English (`en`)
+- **Locale Persistence**: Saved to localStorage
+- **RTL Support**: Full right-to-left layout
+- **Type Safety**: TypeScript autocomplete
+- **Validation**: Automatic checking for missing translations
+
 ### Translation Management
 
 ```bash
-# Validate all translations match
+# Validate translations
 npm run validate:i18n
 
 # Build (runs validation first)
 npm run build
 ```
 
-**📖 For detailed i18n documentation, see [I18N_GUIDE.md](docs/I18N_GUIDE.md)**
-
 ### Adding Translations
 
-1. Add keys to both `src/locales/ar.json` and `src/locales/en.json`
+1. Add keys to `src/locales/ar.json` and `src/locales/en.json`
 2. Run `npm run validate:i18n` to verify
 3. Use `t('your.key')` in components
+
+**📖 For detailed documentation:** [I18N_GUIDE.md](docs/I18N_GUIDE.md)
+
+### CMS for Content (Not Translations)
+
+Sanity CMS is used for dynamic **content** (pages, settings, navigation), while translations remain in JSON files for simplicity. See [CMS_GUIDE.md](docs/CMS_GUIDE.md) for setup.
 
 ## 🔍 SEO Optimization
 
@@ -214,8 +260,10 @@ The site is fully responsive with breakpoints at:
 | [Vite](https://vitejs.dev/) | ^7.2.2 | Next-generation frontend tooling |
 | [Tailwind CSS](https://tailwindcss.com/) | v4 | Utility-first CSS framework |
 | [Vue Router](https://router.vuejs.org/) | ^4.6.3 | Official Vue.js router |
-| [Vue I18n](https://vue-i18n.intlify.dev/) | ^11.1.12 | Internationalization plugin |
+| [Sanity](https://www.sanity.io/) | latest | Headless CMS for content |
+| [Vue I18n](https://vue-i18n.intlify.dev/) | ^11.1.12 | Internationalization (fallback) |
 | [D3 Geo](https://d3js.org/d3-geo) | ^3.1.1 | Geographic projections for map |
+| [EmailJS](https://www.emailjs.com/) | latest | Contact form email service |
 
 ## 🎬 Animations
 
@@ -274,9 +322,33 @@ The Libya Coverage Map component includes:
 - **Mobile Optimized**: Responsive layout with collapsed lists by default on mobile
 - **RTL Support**: Full right-to-left layout support for Arabic interface
 
+## 📚 Documentation
+
+- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System architecture and design decisions
+- **[DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)** - Complete design system reference
+- **[CMS_GUIDE.md](docs/CMS_GUIDE.md)** - Sanity CMS setup and migration guide
+- **[I18N_GUIDE.md](docs/I18N_GUIDE.md)** - Internationalization documentation
+
+## 🔄 Migration Status
+
+The project is currently in a **hybrid state**:
+
+✅ **Completed:**
+- Design system with comprehensive tokens
+- Pages-based architecture
+- Reusable UI component library
+- Sanity CMS setup and schemas
+- Content fetching composables
+
+🚧 **In Progress:**
+- Migrating content from JSON to Sanity
+- Updating components to use new architecture
+
+**To complete migration**, see [CMS_GUIDE.md](docs/CMS_GUIDE.md)
+
 ## 🐛 Known Issues
 
-- None at this time
+- Legacy components coexist with new pages structure (migration in progress)
 
 ## 📝 Contributing
 

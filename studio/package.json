@@ -1,0 +1,13 @@
+{
+  "name": "labas-landing-studio",
+  "version": "1.0.0",
+  "description": "Sanity Studio for Labas Landing",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  }
+}
+

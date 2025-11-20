@@ -109,6 +109,8 @@
   "nav": {
     "features": "Features",
     "solutions": "Solutions",
+    "solutionsApp": "Mobile App",
+    "solutionsDashboard": "Organization Dashboard",
     "about": "About",
     "contact": "Contact"
   },
@@ -365,6 +367,319 @@
     "section22": {
       "title": "22. Reporting Violations",
       "description": "In case of observing any violations or inappropriate content within the application, the user can report it through the reporting feature within the application or through the call center."
+    }
+  },
+  "solutions": {
+    "app": {
+      "meta": {
+        "version": "Version 1.0 · Mobile app",
+        "updated": "Updated April 2025",
+        "author": "Guide by Eng. Marwa Cheema"
+      },
+      "hero": {
+        "badge": "Mobile App",
+        "title": "Your personal healthcare assistant",
+        "subtitle": "Schedule appointments, request services, and manage your health anywhere in Libya.",
+        "cta": "Download App"
+      },
+      "introduction": {
+        "title": "One app for every healthcare request",
+        "description": "The LABAS mobile application centralizes bookings, prescriptions, diagnostics, and urgent support so individuals and families can manage health from anywhere.",
+        "bullets": [
+          "Book doctors, hospitals, and specialist groups without phone calls.",
+          "Request prescription delivery, diagnostics, or home healthcare to your door.",
+          "Top up your eWallet, manage transactions, and add relatives in seconds.",
+          "Reach customer services 24/7 for ambulance requests or guided bookings."
+        ]
+      },
+      "gettingStarted": {
+        "title": "Getting Started",
+        "description": "Follow these quick steps to activate the LABAS experience on your device.",
+        "steps": [
+          "Download the LABAS app from the App Store or Google Play.",
+          "Sign up or log in using your mobile number.",
+          "Complete your profile for personalized recommendations.",
+          "Enter the one-time password (OTP) sent to your device to verify your account."
+        ]
+      },
+      "menus": {
+        "title": "App Menus Overview",
+        "description": "Navigate every service through four primary tabs that live at the bottom of the app.",
+        "home": {
+          "title": "Home",
+          "description": "Main page where you can access services such as Doctors, Hospitals, Pharmacy, Labs, Home Visits, Services, Ambulance, and 24/7 Help."
+        },
+        "bookings": {
+          "title": "Bookings",
+          "description": "View and manage all current and past healthcare bookings (appointments, home visits, lab tests, etc.)."
+        },
+        "orders": {
+          "title": "Orders",
+          "description": "Track and manage all pharmacy and service orders."
+        },
+        "wallet": {
+          "title": "Wallet",
+          "description": "View your balance, add funds, review transactions, and manage payment methods."
+        }
+      },
+      "home": {
+        "title": "Home Screen Overview",
+        "description": "Once logged in, the dashboard displays clearly labelled categories for easy navigation:",
+        "services": {
+          "doctors": {
+            "title": "Doctors",
+            "description": "Book appointments with specialists"
+          },
+          "hospitals": {
+            "title": "Hospitals",
+            "description": "Find and book services at nearby hospitals"
+          },
+          "pharmacy": {
+            "title": "Pharmacy",
+            "description": "Order medications for delivery"
+          },
+          "labs": {
+            "title": "Labs",
+            "description": "Schedule lab tests and request sample collection"
+          },
+          "homeVisits": {
+            "title": "Home Visits",
+            "description": "Book home visits by healthcare professionals"
+          },
+          "services": {
+            "title": "Services",
+            "description": "Access physiotherapy, radiology, and more"
+          },
+          "ambulance": {
+            "title": "Ambulance",
+            "description": "Request emergency ambulance services"
+          },
+          "help": {
+            "title": "Need Help (24/7)",
+            "description": "Get support anytime"
+          }
+        }
+      },
+      "features": {
+        "pretitle": "Core journeys",
+        "title": "Everything you can do inside the app",
+        "subtitle": "Each feature mirrors the official LABAS guides so people know exactly what to expect.",
+        "appointment": {
+          "title": "Make an Appointment",
+          "description": "Schedule appointments with doctors and specialists using the eWallet for secure payments.",
+          "steps": [
+            "Tap \"Doctors\" on the home screen.",
+            "Choose the specialization that fits your need.",
+            "Select a doctor or available group.",
+            "Pick the preferred date and time slot.",
+            "Apply filters (city, specialty, gender) if needed.",
+            "Confirm the booking and receive instant confirmation."
+          ]
+        },
+        "hospitals": {
+          "title": "Hospitals",
+          "description": "Search nearby public or private hospitals and reserve the right service.",
+          "steps": [
+            "Tap \"Hospitals\".",
+            "Use filters to narrow by city or sector.",
+            "Select a hospital from the list.",
+            "Choose the required doctor or service.",
+            "Confirm and share any notes if needed."
+          ]
+        },
+        "prescription": {
+          "title": "Request Prescription",
+          "description": "Upload prescriptions or product images and get medications delivered.",
+          "steps": [
+            "Tap \"Pharmacy\".",
+            "Upload a clear prescription or medicine image.",
+            "Add comments or instructions if needed.",
+            "Submit and wait for the pharmacist confirmation."
+          ]
+        },
+        "labServices": {
+          "title": "Lab Services and Radiology",
+          "description": "Book lab tests, CT scans, or radiology services with on-site or home collection.",
+          "steps": [
+            "Tap \"Labs\".",
+            "Choose \"Laboratory\" for tests or \"CT\" for radiology.",
+            "Enter the required details and attach documents.",
+            "Submit the request and track status from the app."
+          ]
+        },
+        "homeVisit": {
+          "title": "Home Visit",
+          "description": "Schedule medical visits, nursing services, or home care at your address.",
+          "steps": [
+            "Tap \"Home Visit\".",
+            "Pick the organization that will deliver the service.",
+            "Provide address details and attach supporting files.",
+            "Confirm and monitor the visit from the Bookings tab."
+          ]
+        },
+        "services": {
+          "title": "Services",
+          "description": "Access physiotherapy, radiology, pediatrics, and seasonal care packages.",
+          "steps": [
+            "Tap \"Services\".",
+            "Filter by city to view local providers.",
+            "Select a category (e.g., Echo, Circumcision).",
+            "Pick the exact service, choose a time, and confirm."
+          ]
+        },
+        "ambulance": {
+          "title": "Request Ambulance",
+          "description": "Reach the LABAS call center for emergency transportation 24/7.",
+          "steps": [
+            "Tap \"Ambulance\" or call through the 24/7 Help button.",
+            "Share your live location or describe the pickup address.",
+            "Add critical details (patient status, access instructions).",
+            "Submit and stay on the line for live support."
+          ]
+        }
+      },
+      "bookings": {
+        "title": "Bookings Tab",
+        "description": "The bookings tab centralizes every appointment or request.",
+        "viewManage": "View and manage all current and past healthcare bookings (appointments, home visits, lab tests, etc.).",
+        "addRelative": "Add relatives by entering their full name, relation, date of birth, gender, and blood group to book on their behalf."
+      },
+      "orders": {
+        "title": "Orders Tab",
+        "description": "Track pharmacy purchases and service requests in real time.",
+        "trackManage": "Track and manage all pharmacy and service orders.",
+        "addRelative": "Add a relative to place orders for them with the same quick form used in bookings."
+      },
+      "wallet": {
+        "title": "Wallet Tab",
+        "description": "Control payments and see every transaction in one view.",
+        "viewBalance": "View your current balance and transaction history.",
+        "addFunds": "Add funds instantly through supported payment methods.",
+        "managePayment": "Manage payment methods for faster checkout."
+      },
+      "settings": {
+        "title": "Settings & Preferences",
+        "description": "Use the \"My Profile\" area to keep your account secure and up to date.",
+        "items": [
+          "Edit personal information anytime.",
+          "Update the registered phone number (OTP required).",
+          "Change your password and language preference.",
+          "Log out securely or delete the account permanently."
+        ]
+      },
+      "support": {
+        "title": "Contact Support",
+        "description": "Get assistance 24/7 through the channels below or directly inside the app.",
+        "channels": [
+          {
+            "title": "Email Support",
+            "detail": "support@labas.ly",
+            "cta": "Send email",
+            "href": "mailto:support@labas.ly"
+          },
+          {
+            "title": "24/7 Hotline",
+            "detail": "+218 91-428-5424",
+            "cta": "Call now",
+            "href": "tel:+218914285424"
+          },
+          {
+            "title": "Live Chat",
+            "detail": "In-app chat or WhatsApp",
+            "cta": "Start chat",
+            "href": "https://wa.me/218910579911"
+          }
+        ]
+      }
+    }
+  },
+  "appPage": {
+    "hero": {
+      "title": "Your personal healthcare assistant in your pocket",
+      "subtitle": "Book doctor appointments, request prescription delivery, schedule lab tests, and access essential medical services.",
+      "downloadTitle": "Download Labas App"
+    },
+    "features": {
+      "title": "Everything you need",
+      "titleSuffix": "for better health.",
+      "appointments": {
+        "title": "Make an Appointment",
+        "description": "Choose a specialization, select a doctor, and book your preferred time in seconds."
+      },
+      "hospitals": {
+        "title": "Hospitals",
+        "description": "Browse and book services from nearby hospitals. Filter by city or sector."
+      },
+      "prescription": {
+        "title": "Request Prescription",
+        "description": "Upload a clear prescription image. A pharmacist will review and confirm your order."
+      },
+      "labServices": {
+        "title": "Lab Services and Radiology",
+        "description": "Book lab tests or radiology. Samples collected from your location. Results delivered as PDF."
+      },
+      "homeVisit": {
+        "title": "Home Visit",
+        "description": "Request at-home healthcare services. Select an organization and enter your address."
+      },
+      "services": {
+        "title": "Services",
+        "description": "Access physiotherapy, radiology, and more. Filter by city and category."
+      },
+      "ambulance": {
+        "title": "Request Ambulance",
+        "description": "Enter your location and submit. An ambulance will be dispatched immediately."
+      },
+      "support247": {
+        "title": "24/7 Help",
+        "description": "Get continuous support and help whenever you need it. Live chat available."
+      },
+      "healthRecords": {
+        "title": "Health Records",
+        "description": "Access all your medical records, prescriptions, and test results in one place."
+      }
+    },
+    "showcase": {
+      "title": "Seamless Healthcare",
+      "titleSuffix": "Anytime, Anywhere",
+      "download": {
+        "title": "Download the App",
+        "description": "Download from App Store or Google Play. Register using your mobile number."
+      },
+      "chooseService": {
+        "title": "Choose a Service",
+        "description": "Access Doctors, Hospitals, Pharmacy, Labs, Home Visits, Services, Ambulance, and 24/7 Help."
+      },
+      "getCareFast": {
+        "title": "Get Care Fast",
+        "description": "View and manage bookings, track orders, manage your wallet, and access all services instantly."
+      }
+    },
+    "trust": {
+      "title": "Why choose Labas?",
+      "secure": {
+        "title": "Secure & Private",
+        "description": "Your health data is encrypted and protected. Privacy is our priority."
+      },
+      "allInOne": {
+        "title": "All-in-One Health Hub",
+        "description": "Doctors, hospitals, pharmacy, labs, home visits, services, and ambulance. Everything in one app."
+      },
+      "instant": {
+        "title": "Instant Access",
+        "description": "Book appointments, request services, and access your health records in seconds."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Email: support@labas.ly | Phone: +218 91-4285424 | Live Chat available 24/7."
+      }
+    },
+    "stats": {
+      "title": "Trusted by thousands",
+      "subtitle": "Join the Labas community",
+      "careSessions": "Care Sessions",
+      "facilities": "Connected Facilities",
+      "launchYear": "Launch Year"
     }
   }
 }
