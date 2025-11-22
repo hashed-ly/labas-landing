@@ -18,6 +18,31 @@ const router = createRouter({
           component: () => import('../pages/Solutions/AppPage.vue'),
         },
         {
+          path: '/solutions/dashboard',
+          name: 'solutions-dashboard',
+          component: () => import('../pages/Solutions/DashboardPage.vue'),
+        },
+        {
+          path: '/solutions/dashboard/appointments',
+          name: 'solutions-dashboard-appointments',
+          component: () => import('../pages/Solutions/DashboardAppointmentsPage.vue'),
+        },
+        {
+          path: '/solutions/dashboard/booking-info',
+          name: 'solutions-dashboard-booking-info',
+          component: () => import('../pages/Solutions/DashboardBookingInfoPage.vue'),
+        },
+        {
+          path: '/solutions/dashboard/schedules',
+          name: 'solutions-dashboard-schedules',
+          component: () => import('../pages/Solutions/DashboardSchedulesPage.vue'),
+        },
+        {
+          path: '/contact',
+          name: 'contact',
+          component: () => import('../pages/Contact/ContactPage.vue'),
+        },
+        {
           path: '/v1/Privacy-and-Policy',
           name: 'privacy',
           component: () => import('../components/Privacy.vue'),

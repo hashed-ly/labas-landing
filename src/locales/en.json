@@ -681,5 +681,312 @@
       "facilities": "Connected Facilities",
       "launchYear": "Launch Year"
     }
+  },
+  "dashboardPage": {
+    "hero": {
+      "title": "LABAS Medical Institutions Dashboard",
+      "subtitle": "A user-friendly platform designed to streamline daily healthcare operations. Manage appointments, bookings, doctor profiles, imaging services, and timetables all in one place.",
+      "loginButton": "Access Dashboard",
+      "requestAccess": "Book a demo",
+      "features": {
+        "appointments": {
+          "title": "Appointments",
+          "description": "Manage all your appointments and schedules"
+        },
+        "bookings": {
+          "title": "Bookings",
+          "description": "Handle incoming booking requests efficiently"
+        },
+        "profiles": {
+          "title": "Doctor Profiles",
+          "description": "Manage doctor profiles and specializations"
+        }
+      }
+    },
+    "overview": {
+      "title": "Dashboard Overview",
+      "subtitle": "Once logged in, you will see the main sections designed to help you manage your healthcare operations efficiently.",
+      "learnMore": "Learn More",
+      "features": {
+        "dashboard": {
+          "title": "Dashboard",
+          "description": "Overview of key tasks, statistics, and upcoming appointments."
+        },
+        "newAppointment": {
+          "title": "New Appointment",
+          "description": "Create new appointments with full patient and booking details."
+        },
+        "appointmentCalendar": {
+          "title": "Appointment Calendar",
+          "description": "A calendar view of all scheduled appointments with filtering and editing options."
+        },
+        "bookings": {
+          "title": "Bookings",
+          "description": "Manage incoming booking requests (approve, reschedule, or cancel)."
+        },
+        "bookingInfo": {
+          "title": "Booking Information",
+          "description": "Contains three major components: Doctor Profile, Group (Team), and Imaging Services."
+        },
+        "schedules": {
+          "title": "All Schedules — Timetable",
+          "description": "Manage the schedules of doctors, groups, and imaging services."
+        }
+      }
+    },
+    "navigation": {
+      "title": "Explore Dashboard Features",
+      "subtitle": "Click on any feature below to learn more about managing appointments, booking information, and schedules",
+      "viewDetails": "View Details",
+      "pages": {
+        "appointments": {
+          "title": "Appointments & Bookings",
+          "description": "Learn how to create appointments, manage your calendar, and handle booking requests"
+        },
+        "bookingInfo": {
+          "title": "Booking Information",
+          "description": "Manage doctor profiles, groups, and imaging services"
+        },
+        "schedules": {
+          "title": "Schedules & Timetables",
+          "description": "Set up and manage schedules for doctors, groups, and services"
+        }
+      }
+    },
+    "onboarding": {
+      "title": "Getting Started",
+      "subtitle": "Follow these simple steps to start using the LABAS Dashboard",
+      "steps": {
+        "login": {
+          "title": "Login & Access",
+          "description": "Visit https://org.labas.ly/login, enter your username and password, then click Login to access your dashboard. If you face login issues, contact the support team."
+        },
+        "explore": {
+          "title": "Explore the Dashboard",
+          "description": "Once logged in, familiarize yourself with the main sections: Dashboard overview, New Appointment, Appointment Calendar, Bookings, Booking Information, and Schedules."
+        },
+        "setup": {
+          "title": "Set Up Your Information",
+          "description": "Start by adding doctor profiles, creating groups (teams), and setting up imaging services. Make sure all information is provided in both Arabic and English where required."
+        },
+        "start": {
+          "title": "Start Managing",
+          "description": "Begin creating appointments, managing bookings, and setting up schedules. The dashboard provides all the tools you need to streamline your daily operations."
+        }
+      },
+      "cta": "Book a demo"
+    },
+    "cta": {
+      "title": "Ready to streamline your healthcare operations?",
+      "subtitle": "Access the LABAS Dashboard and start managing your appointments, bookings, and schedules today.",
+      "loginButton": "Login to Dashboard",
+      "supportTitle": "Need Help?",
+      "email": "support{'@'}labas.com",
+      "phone": "+218 91-4285424",
+      "liveChat": "Live Chat available 24/7"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions about using the LABAS Dashboard",
+      "items": {
+        "login": {
+          "question": "How do I log in?",
+          "answer": "Visit the login page at https://org.labas.ly/login, enter your credentials, and click Login."
+        },
+        "password": {
+          "question": "I forgot my password — what should I do?",
+          "answer": "Contact the LABAS support team for password reset assistance."
+        },
+        "createAppointment": {
+          "question": "How do I create a new appointment?",
+          "answer": "Go to New Appointment, fill in all details including patient type, patient information, booking type, and booking details, then save."
+        },
+        "calendar": {
+          "question": "Can I view appointments in a calendar?",
+          "answer": "Yes — the appointment calendar provides filtering and editing tools. You can filter by booking type or date range and click any appointment to view or edit details."
+        },
+        "notAppearing": {
+          "question": "Why isn't my doctor/group/service appearing in the app?",
+          "answer": "Check that the record is Active and it has been approved by the Super Admin, if required."
+        },
+        "saveAppointment": {
+          "question": "What should I do if an appointment is not saving?",
+          "answer": "Ensure all fields are filled logically and correctly. Check that patient information, booking type, and booking details are all complete before clicking Save."
+        }
+      },
+      "stillHaveQuestions": "Still have questions?"
+    }
+  },
+  "dashboardAppointments": {
+    "hero": {
+      "title": "Appointments & Bookings Management",
+      "subtitle": "Streamline your appointment scheduling and booking management"
+    },
+    "newAppointment": {
+      "badge": "New Appointment",
+      "title": "Create New Appointments",
+      "subtitle": "Easily create appointments with full patient and booking details",
+      "steps": {
+        "click": {
+          "title": "Click New Appointment",
+          "description": "Navigate to the New Appointment section from the main dashboard."
+        },
+        "select": {
+          "title": "Select Patient Type",
+          "description": "Choose the appropriate patient type for the appointment."
+        },
+        "enter": {
+          "title": "Enter Patient Information",
+          "description": "Fill in all required patient details accurately."
+        },
+        "choose": {
+          "title": "Choose Booking Type",
+          "description": "Select the type of booking that matches the appointment needs."
+        },
+        "fill": {
+          "title": "Fill in Booking Details",
+          "description": "Complete all booking-specific information and requirements."
+        },
+        "save": {
+          "title": "Click Save",
+          "description": "Review all information and save the appointment to the system."
+        }
+      }
+    },
+    "calendar": {
+      "title": "Appointment Calendar",
+      "subtitle": "View and manage all your appointments in a clean calendar layout",
+      "features": {
+        "view": {
+          "title": "View All Appointments",
+          "description": "See all scheduled appointments in a clean calendar layout for easy overview."
+        },
+        "filter": {
+          "title": "Filter by Type or Date",
+          "description": "Filter appointments by booking type or date range to find what you need quickly."
+        },
+        "edit": {
+          "title": "View and Edit Details",
+          "description": "Click any appointment to view or edit its details directly from the calendar."
+        }
+      }
+    },
+    "bookings": {
+      "title": "Manage Booking Requests",
+      "subtitle": "Full management of incoming patient booking requests",
+      "actions": {
+        "view": {
+          "title": "View All Bookings",
+          "description": "See all incoming patient bookings in one organized view."
+        },
+        "approve": {
+          "title": "Approve Requests",
+          "description": "Approve booking requests that meet your criteria and availability."
+        },
+        "reschedule": {
+          "title": "Reschedule Appointments",
+          "description": "Easily reschedule appointments to different times or dates when needed."
+        },
+        "cancel": {
+          "title": "Cancel Requests",
+          "description": "Cancel booking requests that cannot be accommodated."
+        },
+        "filter": {
+          "title": "Filter by Criteria",
+          "description": "Filter bookings by customer name, date, or status to find specific requests quickly."
+        }
+      }
+    }
+  },
+  "dashboardBookingInfo": {
+    "heroTitle": "Booking Information",
+    "heroSubtitle": "Manage doctor profiles, groups, and imaging services to streamline your healthcare operations",
+    "title": "Booking Information",
+    "subtitle": "A detailed module containing key operational tools for managing your healthcare services",
+    "noteLabel": "Note",
+    "doctorProfile": {
+      "title": "Doctor Profile",
+      "description": "Manage doctor profiles with specialization, degree, and consulting price information.",
+      "stepsTitle": "Adding a New Doctor Profile",
+      "step1": "Click New Doctor Profile",
+      "step2": "Select the doctor from the database (if available)",
+      "step3": "Choose specialization",
+      "step4": "Select degree",
+      "step5": "Enter consulting price (0 for public doctors)",
+      "step6": "Click Create",
+      "note": "The doctor profile will not appear in the app until the Super Admin approves the price."
+    },
+    "group": {
+      "title": "Group (Team)",
+      "description": "A group of doctors assigned to a specific day, helping patients book by availability rather than individual doctors.",
+      "stepsTitle": "Adding a New Group",
+      "step1": "Enter group name",
+      "step2": "Select specialization",
+      "step3": "Provide a brief description",
+      "step4": "Set consulting price (if private)",
+      "note": "The group information must be provided in both Arabic and English."
+    },
+    "imaging": {
+      "title": "Imaging Services",
+      "description": "Patients request imaging services; the institution confirms and the call center delivers results through the app.",
+      "stepsTitle": "Adding a New Imaging Service",
+      "step1": "Click New Image Analysis",
+      "step2": "Select a service category",
+      "step3": "Select the specific service",
+      "step4": "Enable Require Attachment if needed",
+      "step5": "Enter a detailed description",
+      "step6": "Set the price",
+      "step7": "Click Create"
+    }
+  },
+  "dashboardSchedules": {
+    "heroTitle": "Schedules & Timetables",
+    "heroSubtitle": "Manage doctor and service availability with comprehensive scheduling tools",
+    "title": "All Schedules — Timetable",
+    "subtitle": "Manage doctor and service availability with comprehensive scheduling tools",
+    "capabilities": {
+      "view": {
+        "title": "View Full Schedules",
+        "description": "View full schedules, shifts, and availability for doctors, groups, and imaging services."
+      },
+      "edit": {
+        "title": "Edit Schedules",
+        "description": "Edit schedules based on doctor or group availability to optimize your operations."
+      }
+    },
+    "editing": {
+      "title": "Editing a Timetable",
+      "step1": "The Schedulable Type section (Doctor / Group / Imaging) appears automatically — do not modify it.",
+      "step2": "Update the following fields:",
+      "step3": "Ensure the timetable is set to Active.",
+      "step4": "Click Save to apply your changes.",
+      "fields": {
+        "startTime": {
+          "title": "Start Time",
+          "description": "Set when the schedule begins"
+        },
+        "endTime": {
+          "title": "End Time",
+          "description": "Set when the schedule ends"
+        },
+        "days": {
+          "title": "Days of the Week",
+          "description": "Select which days are available"
+        },
+        "capacity": {
+          "title": "Capacity",
+          "description": "Number of sessions available"
+        },
+        "bookingWindow": {
+          "title": "Booking Window",
+          "description": "How far in advance booking is allowed"
+        },
+        "active": {
+          "title": "Active Status",
+          "description": "Enable or disable the schedule"
+        }
+      }
+    }
   }
 }

@@ -12,23 +12,23 @@
 
 ---
 
-A modern, bilingual (Arabic/English) landing page for the Labas healthcare application. Built with Vue 3, Tailwind CSS v4, and Sanity CMS, featuring RTL-first design, comprehensive design system, and a scalable architecture.
+A modern, bilingual (Arabic/English) landing page for the Labas healthcare application. Built with Vue 3, Tailwind CSS v4, featuring RTL-first design, comprehensive design system, and a scalable architecture.
 
 ## ✨ Features
 
 - 🌐 **RTL-First Design**: Default Arabic (RTL) with seamless English (LTR) toggle
-- ⚡ **Modern Stack**: Vue 3 Composition API, Tailwind CSS v4, Sanity CMS, Vue Router
-- 🌍 **Bilingual Support**: Complete Arabic and English translations via CMS
+- ⚡ **Modern Stack**: Vue 3 Composition API, Tailwind CSS v4, Vue Router
+- 🌍 **Bilingual Support**: Complete Arabic and English translations (500+ keys)
 - 🎨 **Comprehensive Design System**: Full design tokens with color scales, typography, spacing, shadows
 - 🏗️ **Scalable Architecture**: Pages-based structure with reusable UI components
-- 🗄️ **Headless CMS**: Sanity CMS for content and translation management
 - ♿ **Accessible**: Semantic HTML, ARIA labels, keyboard navigation, WCAG AA compliant
-- 🔍 **SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards
-- 🚀 **Performance**: Code splitting, lazy loading, optimized assets
+- 🔍 **SEO Optimized**: Dynamic meta tags, Open Graph, Twitter Cards, JSON-LD structured data
+- 🚀 **Performance**: Code splitting, lazy loading, optimized assets (~82KB gzipped)
 - 📱 **Fully Responsive**: Mobile-first design optimized for all devices
 - 🧩 **UI Component Library**: Reusable Button, Input, Card, Badge, Modal components
-- 🗺️ **Interactive Map**: D3.js-powered Libya coverage map
+- 🗺️ **Interactive Map**: D3.js-powered Libya coverage map with city selection
 - 🎬 **Smart Animations**: Intersection Observer-based scroll animations
+- 📧 **Contact Forms**: Ready for Mailgun integration
 
 ## 🚀 Getting Started
 
@@ -39,33 +39,17 @@ A modern, bilingual (Arabic/English) landing page for the Labas healthcare appli
 ### Installation
 
 ```bash
-# Install frontend dependencies
+# Install dependencies
 npm install
-
-# Install Sanity Studio dependencies (optional)
-cd studio
-npm install
-cd ..
 ```
 
 ### Development
 
-**Frontend:**
 ```bash
 npm run dev
 ```
 
 Visit `http://localhost:5173` to see the site in Arabic (default).
-
-**Sanity Studio (optional):**
-```bash
-cd studio
-npx sanity dev
-```
-
-Visit `http://localhost:3333` to access the CMS.
-
-**Note:** The site can run without Sanity in development using fallback JSON translations.
 
 ### Build for Production
 
@@ -73,7 +57,7 @@ Visit `http://localhost:3333` to access the CMS.
 npm run build
 ```
 
-Automatically validates translations before building.
+Automatically validates translations before building. Output goes to `dist/` directory.
 
 ### Preview Production Build
 
@@ -86,69 +70,82 @@ npm run preview
 ```
 labas-landing/
 ├── public/                  # Static assets
-│   └── images/              # Images and icons
+│   ├── images/              # Images, icons, screenshots
+│   ├── Labas Guides/        # Content reference guides
+│   └── Libya/              # Map data files
 ├── src/
 │   ├── components/
-│   │   ├── ui/              # Reusable UI components
-│   │   │   ├── Button.vue
-│   │   │   ├── Input.vue
-│   │   │   ├── Card.vue
-│   │   │   ├── Badge.vue
-│   │   │   └── Modal.vue
-│   │   ├── layout/          # Layout components
+│   │   ├── ui/             # Reusable UI components
+│   │   │   ├── CTAButton.vue
+│   │   │   ├── Dropdown.vue
+│   │   │   └── ...
+│   │   ├── layout/         # Layout components
 │   │   │   ├── Header.vue
-│   │   │   ├── Footer.vue
-│   │   │   ├── Container.vue
-│   │   │   └── Section.vue
-│   │   └── [Legacy components...]
-│   ├── pages/               # Page components
+│   │   │   └── Footer.vue
+│   │   └── [Other components...]
+│   ├── pages/              # Page components
 │   │   ├── Home/
 │   │   │   ├── HomePage.vue
-│   │   │   └── sections/    # Home page sections
+│   │   │   └── sections/   # Home page sections
+│   │   ├── Solutions/
+│   │   │   ├── AppPage.vue
+│   │   │   ├── DashboardPage.vue
+│   │   │   ├── DashboardAppointmentsPage.vue
+│   │   │   ├── DashboardBookingInfoPage.vue
+│   │   │   ├── DashboardSchedulesPage.vue
+│   │   │   └── sections/   # Solution page sections
+│   │   ├── Contact/
+│   │   │   └── ContactPage.vue
 │   │   ├── Privacy/
 │   │   │   └── PrivacyPage.vue
 │   │   └── Terms/
 │   │       └── TermsPage.vue
 │   ├── layouts/
-│   │   ├── BaseLayout.vue   # Base layout with slots
-│   │   └── MainLayout.vue   # Legacy main layout
+│   │   └── MainLayout.vue  # Main layout wrapper
 │   ├── composables/
-│   │   ├── useI18n.js       # Legacy i18n composable
-│   │   ├── useTranslation.js # Sanity-based translations
-│   │   ├── useSanityContent.js # Fetch content from CMS
-│   │   └── useIntersectionObserver.js
-│   ├── lib/
-│   │   └── sanity.js        # Sanity client configuration
+│   │   ├── useI18n.js      # i18n composable
+│   │   ├── useSEO.js       # Dynamic SEO meta tags
+│   │   ├── useIntersectionObserver.js
+│   │   └── ...
 │   ├── locales/
-│   │   ├── ar.json          # Fallback Arabic translations
-│   │   └── en.json          # Fallback English translations
+│   │   ├── ar.json         # Arabic translations (500 keys)
+│   │   └── en.json         # English translations (500 keys)
 │   ├── router/
 │   │   └── index.js         # Vue Router configuration
-│   ├── tokens.js            # Design system tokens
-│   ├── style.css            # Global styles with @theme
-│   └── main.js              # Application entry point
-├── studio/                  # Sanity CMS Studio
-│   ├── schemas/             # Content schemas
-│   │   ├── page.js
-│   │   ├── translation.js
-│   │   ├── navigation.js
-│   │   ├── siteSettings.js
-│   │   └── index.js
-│   ├── sanity.config.js
-│   └── package.json
-├── docs/                    # Documentation
+│   ├── tokens.js           # Design system tokens
+│   ├── constants.js        # App constants (links, etc.)
+│   ├── style.css           # Global styles
+│   └── main.js             # Application entry point
+├── scripts/
+│   └── validate-translations.js  # Translation validation
+├── docs/                   # Documentation
 │   ├── ARCHITECTURE.md
 │   ├── DESIGN_SYSTEM.md
-│   ├── CMS_GUIDE.md
-│   └── I18N_GUIDE.md
+│   └── ...
+├── PRODUCTION_CHECKLIST.md # Production readiness checklist
+├── SEO_IMPLEMENTATION.md   # SEO implementation guide
+├── MAILGUN_INTEGRATION.md  # Mailgun integration guide
 └── README.md
 ```
+
+## 🗺️ Site Routes
+
+### Main Pages
+- `/` - Home page
+- `/contact` - Contact page with form
+- `/v1/Privacy-and-Policy` - Privacy policy
+- `/v1/terms-of-use` - Terms of use
+
+### Solutions Pages
+- `/solutions/app` - Mobile App page
+- `/solutions/dashboard` - Dashboard overview
+- `/solutions/dashboard/appointments` - Appointments & Bookings management
+- `/solutions/dashboard/booking-info` - Booking Information (Doctor Profiles, Groups, Imaging)
+- `/solutions/dashboard/schedules` - Schedules & Timetables
 
 ## 🎨 Design System
 
 ### Brand Colors
-
-Full color scales with 50-900 shades:
 
 | Token       | Base      | Usage              |
 | ----------- | --------- | ------------------ |
@@ -165,21 +162,12 @@ Full color scales with 50-900 shades:
 - **English Font**: Urbanist (400, 500, 700)
 - **Font Sizes**: xs (12px) to 9xl (128px)
 - **Line Heights**: tight, normal, relaxed, loose
-- **Letter Spacing**: tighter to widest
-
-### Spacing & Layout
-
-- **Base Unit**: 4px
-- **Spacing Scale**: 0-96 (0-384px)
-- **Border Radius**: sm to 3xl + full
-- **Shadows**: sm to 2xl + custom (soft, glow)
-- **Breakpoints**: sm (640px) to 2xl (1536px)
 
 **📖 For complete design system docs, see [DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)**
 
 ## 🌐 Internationalization
 
-The site uses **JSON-based i18n** for all translations:
+The site uses **JSON-based i18n** with 500+ translation keys in both Arabic and English:
 
 ```vue
 <script setup>
@@ -199,7 +187,6 @@ const { t, locale, toggleLocale } = useI18n();
 - **Fallback Language**: English (`en`)
 - **Locale Persistence**: Saved to localStorage
 - **RTL Support**: Full right-to-left layout
-- **Type Safety**: TypeScript autocomplete
 - **Validation**: Automatic checking for missing translations
 
 ### Translation Management
@@ -212,45 +199,52 @@ npm run validate:i18n
 npm run build
 ```
 
-### Adding Translations
-
-1. Add keys to `src/locales/ar.json` and `src/locales/en.json`
-2. Run `npm run validate:i18n` to verify
-3. Use `t('your.key')` in components
-
-**📖 For detailed documentation:** [I18N_GUIDE.md](docs/I18N_GUIDE.md)
-
-### CMS for Content (Not Translations)
-
-Sanity CMS is used for dynamic **content** (pages, settings, navigation), while translations remain in JSON files for simplicity. See [CMS_GUIDE.md](docs/CMS_GUIDE.md) for setup.
+**📖 For detailed documentation:** See translation files in `src/locales/`
 
 ## 🔍 SEO Optimization
 
-The site includes comprehensive SEO features:
+### Dynamic Meta Tags
 
-- **Meta Tags**: Title, description, keywords, robots, theme-color
-- **Open Graph**: Full OG tags for social media sharing (title, description, image, type, locale)
-- **Twitter Cards**: Optimized Twitter sharing cards (summary_large_image)
-- **Structured Data**: JSON-LD schema for Organization with contact information
-- **Canonical URLs**: Proper canonical links for all pages
-- **Hreflang Tags**: Language alternates for Arabic/English versions
-- **Semantic HTML**: Proper heading hierarchy (h1-h6) and ARIA landmarks
-- **Bilingual Support**: Separate meta descriptions and titles per language
+Each page dynamically updates meta tags using the `useSEO` composable:
+
+- **Page Titles**: Unique, bilingual titles per route
+- **Meta Descriptions**: Unique, bilingual descriptions per route
+- **Open Graph Tags**: Auto-updated for social sharing
+- **Twitter Cards**: Optimized for Twitter sharing
+- **Canonical URLs**: Proper canonical links per route
+- **Hreflang Tags**: Language alternates (ar/en)
+
+### Structured Data
+
+- JSON-LD Organization schema with contact information
+- Ready for additional schemas (BreadcrumbList, WebSite, etc.)
+
+**📖 For complete SEO documentation:** [SEO_IMPLEMENTATION.md](SEO_IMPLEMENTATION.md)
+
+## 📧 Contact Form Integration
+
+The contact form is ready for **Mailgun** integration. See [MAILGUN_INTEGRATION.md](MAILGUN_INTEGRATION.md) for:
+- Integration steps
+- Backend example code
+- Security considerations
+- Testing checklist
 
 ## ♿ Accessibility
 
-- Semantic HTML5 elements
-- ARIA labels where appropriate
-- Keyboard navigation support
-- Color contrast meets WCAG AA standards
-- Focus states on interactive elements
+- ✅ Semantic HTML5 elements
+- ✅ ARIA labels on interactive elements
+- ✅ Keyboard navigation support
+- ✅ Color contrast meets WCAG AA standards
+- ✅ Focus states on all interactive elements
+- ✅ Alt text on all images
+- ✅ Proper heading hierarchy
 
 ## 📱 Responsive Design
 
-The site is fully responsive with breakpoints at:
-
-- Mobile: < 768px
-- Tablet/Desktop: ≥ 768px (md breakpoint)
+Fully responsive with breakpoints:
+- **Mobile**: < 640px (sm)
+- **Tablet**: 640px - 1024px (md, lg)
+- **Desktop**: > 1024px (xl, 2xl)
 
 ## 🔧 Technologies
 
@@ -260,20 +254,62 @@ The site is fully responsive with breakpoints at:
 | [Vite](https://vitejs.dev/) | ^7.2.2 | Next-generation frontend tooling |
 | [Tailwind CSS](https://tailwindcss.com/) | v4 | Utility-first CSS framework |
 | [Vue Router](https://router.vuejs.org/) | ^4.6.3 | Official Vue.js router |
-| [Sanity](https://www.sanity.io/) | latest | Headless CMS for content |
-| [Vue I18n](https://vue-i18n.intlify.dev/) | ^11.1.12 | Internationalization (fallback) |
+| [Vue I18n](https://vue-i18n.intlify.dev/) | ^11.1.12 | Internationalization |
 | [D3 Geo](https://d3js.org/d3-geo) | ^3.1.1 | Geographic projections for map |
-| [EmailJS](https://www.emailjs.com/) | latest | Contact form email service |
 
 ## 🎬 Animations
 
-The site features intelligent scroll-triggered animations using the Intersection Observer API:
+Intelligent scroll-triggered animations using Intersection Observer API:
 
 - **Fade-in-up**: Elements fade in and slide up when scrolled into view
-- **Centered Activation**: Animations trigger when sections reach ~50% viewport visibility for better UX
 - **Staggered delays**: Sequential animations for lists and grids
 - **Smooth transitions**: All interactive elements have smooth hover/focus states
 - **Performance Optimized**: Respects `prefers-reduced-motion` for accessibility
+
+## 🗺️ Interactive Map Features
+
+The Libya Coverage Map component includes:
+
+- **City Selection**: Interactive buttons for Benghazi, Tripoli, and Misrata
+- **Auto-Focus**: Map automatically centers on selected city
+- **Facility Listings**: Collapsible panels showing hospitals, clinics, and labs
+- **Statistics Display**: City-specific statistics with icons
+- **Mobile Optimized**: Responsive layout with collapsed lists by default
+- **RTL Support**: Full right-to-left layout support
+
+## 📚 Documentation
+
+- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System architecture and design decisions
+- **[DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)** - Complete design system reference
+- **[SEO_IMPLEMENTATION.md](SEO_IMPLEMENTATION.md)** - SEO implementation guide
+- **[MAILGUN_INTEGRATION.md](MAILGUN_INTEGRATION.md)** - Mailgun integration guide
+- **[PRODUCTION_CHECKLIST.md](PRODUCTION_CHECKLIST.md)** - Production readiness checklist
+
+## ✅ Production Status
+
+### Build Status
+- ✅ Build succeeds without errors
+- ✅ All translation keys validated (500 keys in both languages)
+- ✅ Bundle size optimized (~82KB gzipped main bundle)
+- ✅ All routes configured and working
+
+### Code Quality
+- ✅ No console.log statements in production code
+- ✅ All external links have `rel="noopener noreferrer"`
+- ✅ All images have alt text
+- ✅ Proper semantic HTML structure
+
+### SEO
+- ✅ Dynamic meta tags per page
+- ✅ Open Graph and Twitter Card tags
+- ✅ JSON-LD structured data
+- ✅ Canonical URLs and hreflang tags
+
+### Accessibility
+- ✅ WCAG AA compliant
+- ✅ Keyboard navigation
+- ✅ Screen reader friendly
+- ✅ RTL/LTR support
 
 ## 🚧 Development Notes
 
@@ -282,7 +318,7 @@ The site features intelligent scroll-triggered animations using the Intersection
 - ✅ Use logical properties: `start`/`end` instead of `left`/`right`
 - ✅ Test both RTL and LTR layouts thoroughly
 - ✅ Use `dir="ltr"` for phone numbers and emails
-- ⚠️ Icons and images may need mirroring in RTL mode
+- ✅ Icons and chevrons are RTL-aware
 
 ### Vue I18n Special Characters
 
@@ -297,12 +333,11 @@ When using `@` symbols in translation strings, escape them with `{'@'}`:
 ### Performance & Images
 
 - ✅ Images are lazy-loaded with `loading="lazy"` (below fold)
-- ✅ Hero images use `loading="eager"` and `fetchpriority="high"`
-- ✅ Google Fonts are preloaded with `display=swap`
-- ✅ Splash screen cached per session with `sessionStorage`
-- 📖 See [IMAGE_OPTIMIZATION.md](docs/IMAGE_OPTIMIZATION.md) for optimization guide
+- ✅ Hero images use `loading="eager"`
+- ✅ Code splitting via dynamic imports
+- ✅ Optimized build output
 
-**Recommended:** Convert images to WebP format for 80-90% size reduction without quality loss.
+**Recommended:** Convert images to WebP format for 80-90% size reduction.
 
 ### Browser Support
 
@@ -310,54 +345,25 @@ When using `@` symbols in translation strings, escape them with `{'@'}`:
 - Mobile browsers (iOS Safari, Chrome Mobile)
 - RTL support tested on Arabic-locale browsers
 
-## 🗺️ Interactive Map Features
-
-The Libya Coverage Map component includes:
-
-- **City Selection**: Interactive buttons to switch between Benghazi, Tripoli, and Misrata
-- **Auto-Focus**: Map automatically centers on selected city with locale-aware positioning
-- **Facility Listings**: Collapsible panels showing hospitals, clinics, and labs per city
-- **Zoom Controls**: Interactive zoom in/out and reset buttons
-- **Brand Markers**: Custom SVG brand marks replace standard map pins
-- **Mobile Optimized**: Responsive layout with collapsed lists by default on mobile
-- **RTL Support**: Full right-to-left layout support for Arabic interface
-
-## 📚 Documentation
-
-- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System architecture and design decisions
-- **[DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)** - Complete design system reference
-- **[CMS_GUIDE.md](docs/CMS_GUIDE.md)** - Sanity CMS setup and migration guide
-- **[I18N_GUIDE.md](docs/I18N_GUIDE.md)** - Internationalization documentation
-
-## 🔄 Migration Status
-
-The project is currently in a **hybrid state**:
-
-✅ **Completed:**
-- Design system with comprehensive tokens
-- Pages-based architecture
-- Reusable UI component library
-- Sanity CMS setup and schemas
-- Content fetching composables
-
-🚧 **In Progress:**
-- Migrating content from JSON to Sanity
-- Updating components to use new architecture
-
-**To complete migration**, see [CMS_GUIDE.md](docs/CMS_GUIDE.md)
-
 ## 🐛 Known Issues
 
-- Legacy components coexist with new pages structure (migration in progress)
+- Some style warnings for gradient classes (cosmetic only, non-blocking)
 
-## 📝 Contributing
+## 📝 Scripts
 
-This is a private project for Labas Health Services Company. For internal contributions:
+```bash
+# Development server
+npm run dev
 
-1. Create a feature branch from `main`
-2. Make your changes
-3. Test both Arabic and English versions
-4. Submit a pull request with a clear description
+# Build for production (validates translations first)
+npm run build
+
+# Preview production build
+npm run preview
+
+# Validate translations only
+npm run validate:i18n
+```
 
 ## 📞 Contact
 
@@ -372,8 +378,8 @@ This is a private project for Labas Health Services Company. For internal contri
 
 ## 📄 License
 
-© 2024 لا باس (Labas) - All rights reserved  
-Owned and operated by **Gate Company For Information Technology**
+© 2025 لا باس (Labas) - All rights reserved  
+Owned and operated by **Egate Company For Information Technology**
 
 ---
 

@@ -13,9 +13,10 @@ const formData = ref({
   message: '',
 });
 
-const handleSubmit = () => {
-  // Handle form submission - this will be integrated with EmailJS
-  console.log('Form submitted:', formData.value);
+const handleSubmit = async () => {
+  // Form submission will be handled via Mailgun API
+  // TODO: Integrate with Mailgun API endpoint
+  // Example: POST to your backend endpoint which forwards to Mailgun
 };
 </script>
 

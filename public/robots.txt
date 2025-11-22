@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://labas.ly/sitemap.xml
+
+# Disallow admin/CMS areas if any
+Disallow: /studio/
+Disallow: /admin/
+

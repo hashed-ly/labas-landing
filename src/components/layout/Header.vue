@@ -121,16 +121,16 @@ onUnmounted(() => {
                   {{ t('nav.solutionsApp') }}
                 </a>
                 <a
-                  href="/solutions/organizations"
+                  href="/solutions/dashboard"
                   class="block px-4 py-2.5 text-sm text-text/70 hover:text-text hover:bg-bg transition-colors"
-                  @click="handleItemClick({ href: '/solutions/organizations' })"
+                  @click="handleItemClick({ href: '/solutions/dashboard' })"
                 >
                   {{ t('nav.solutionsDashboard') }}
                 </a>
               </template>
             </Dropdown>
             <a
-              href="/#contact"
+              href="/contact"
               class="text-md font-medium hover:text-text transition-colors"
             >
               {{ t('nav.contact') }}
@@ -249,7 +249,7 @@ onUnmounted(() => {
                 {{ t('nav.solutionsApp') }}
               </a>
               <a
-                href="/solutions/organizations"
+                href="/solutions/dashboard"
                 class="block px-4 py-2 text-sm text-text/70 hover:text-text hover:bg-bg rounded-lg transition-colors"
                 @click="mobileMenuOpen = false"
               >
