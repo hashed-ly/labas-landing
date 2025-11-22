@@ -131,8 +131,8 @@ const benefits = [
               />
               <!-- Fade to white overlay -->
               <div
-                class="absolute bottom-0 left-0 right-0 h-32 sm:h-40 md:h-48 pointer-events-none"
-                style="background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);"
+                class="absolute bottom-0 left-0 right-0 h-32 sm:h-40 md:h-48 bg-white pointer-events-none"
+                style="mask-image: linear-gradient(to top, black 0%, black 30%, rgba(0, 0, 0, 0.5) 60%, transparent 100%); -webkit-mask-image: linear-gradient(to top, black 0%, black 30%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);"
                 aria-hidden="true"
               ></div>
             </div>

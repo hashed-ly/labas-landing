@@ -2,6 +2,8 @@
 import { computed } from 'vue';
 import { useI18n } from '../../../composables/useI18n';
 import { useIntersectionObserver } from '../../../composables/useIntersectionObserver';
+import CTAButton from '../../../components/ui/CTAButton.vue';
+import { APP_LINKS } from '../../../constants';
 
 const { t, locale } = useI18n();
 const { targetRef, isVisible } = useIntersectionObserver();
@@ -28,19 +30,15 @@ const isArabic = computed(() => locale.value === 'ar');
               'animate-fade-in-up': isVisible,
             }"
           >
-            <div class="relative w-full max-w-sm md:max-w-md">
+            <div
+              class="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl"
+            >
               <img
                 src="/images/screenshots/Holding Phone - Facilities Screen.png"
                 alt="Labas App - Facilities Screen"
                 class="w-full h-auto object-contain"
                 loading="lazy"
               />
-              <!-- Fade to section background overlay -->
-              <div
-                class="absolute bottom-0 left-0 right-0 h-32 sm:h-40 md:h-48 pointer-events-none"
-                style="background: linear-gradient(to top, rgba(246, 248, 250, 1) 0%, rgba(246, 248, 250, 0.8) 50%, transparent 100%);"
-                aria-hidden="true"
-              ></div>
             </div>
           </div>
 
@@ -93,28 +91,11 @@ const isArabic = computed(() => locale.value === 'ar');
             </div>
 
             <!-- Download Button -->
-            <div class="pt-4">
-              <a
-                href="https://apps.apple.com/ly/app/%D9%84%D8%A7%D8%A8%D8%A7%D8%B3-labas-appointments/id6746457351"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
-              >
-                {{ t('appPage.hero.downloadTitle') }}
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
+            <div class="pt-4 flex flex-col sm:flex-row gap-3">
+              <CTAButton
+                :text="t('appPage.hero.downloadTitle')"
+                :href="APP_LINKS.onelink"
+              />
             </div>
           </div>
         </div>
@@ -122,4 +103,3 @@ const isArabic = computed(() => locale.value === 'ar');
     </div>
   </section>
 </template>
-

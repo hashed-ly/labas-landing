@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useI18n } from '../../../composables/useI18n';
 import { useIntersectionObserver } from '../../../composables/useIntersectionObserver';
+import CTAButton from '../../../components/ui/CTAButton.vue';
 
 const { t, locale } = useI18n();
 const { targetRef, isVisible } = useIntersectionObserver();
@@ -115,30 +116,7 @@ const toggle = (key) => {
         <p class="text-text/70 mb-4">
           {{ t('faq.stillHaveQuestions') }}
         </p>
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-primary !text-white rounded-lg font-medium hover:bg-primary/90 transition-colors mt-3"
-        >
-          {{ t('faq.contactUs') }}
-          <svg
-            class="w-5 h-5"
-            :class="locale === 'ar' ? 'rotate-90' : '-rotate-90'"
-            viewBox="0 0 1562 1177"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.9"
-              d="M975.964 201.508L584.2 587.435C475.289 694.724 473.974 869.988 581.262 978.9C688.551 1087.81 863.816 1089.13 972.727 981.838L1364.49 595.911C1473.4 488.622 1474.72 313.357 1367.43 204.446C1260.14 95.5347 1084.87 94.2194 975.964 201.508Z"
-              fill="white"
-            />
-            <path
-              opacity="0.9"
-              d="M194.264 585.728L580.19 977.491C687.479 1086.4 862.744 1087.72 971.655 980.429C1080.57 873.14 1081.88 697.875 974.593 588.964L588.666 197.201C481.378 88.2896 306.113 86.9741 197.202 194.263C88.2902 301.552 86.9748 476.816 194.264 585.728Z"
-              fill="white"
-            />
-          </svg>
-        </a>
+        <CTAButton class="mt-3" />
       </div>
     </div>
   </section>

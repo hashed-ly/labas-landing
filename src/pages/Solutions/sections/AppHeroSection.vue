@@ -8,7 +8,7 @@ const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
 
 <template>
   <section
-    class="relative py-16 sm:py-20 md:py-32 bg-gradient-to-br from-secondary via-primary to-primary text-white overflow-hidden transition-all duration-700"
+    class="relative max-h-screen py-24 md:py-32 bg-gradient-to-br from-secondary via-primary to-primary text-white overflow-hidden transition-all duration-700"
     ref="targetRef"
   >
     <!-- Decorative Elements -->
@@ -94,19 +94,40 @@ const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
                 class="w-full h-auto object-contain"
                 loading="eager"
               />
-              <!-- Fade to section background overlay -->
-              <div
-                class="absolute bottom-0 left-0 right-0 h-32 sm:h-40 md:h-48 pointer-events-none"
+              <!-- Fade to hero background overlay -->
+              <!-- <div
+                class="absolute bottom-0 left-0 right-0 h-40 sm:h-48 md:h-56 lg:h-64 pointer-events-none"
                 style="
                   background: linear-gradient(
                     to top,
-                    rgb(11, 57, 84) 0%,
-                    rgba(11, 57, 84, 0.8) 50%,
+                    #0b3954 0%,
+                    #0b3954 20%,
+                    rgba(11, 57, 84, 0.95) 40%,
+                    rgba(11, 57, 84, 0.7) 60%,
+                    rgba(11, 57, 84, 0.3) 80%,
+                    transparent 100%
+                  );
+                  mask-image: linear-gradient(
+                    to top,
+                    black 0%,
+                    black 15%,
+                    rgba(0, 0, 0, 0.9) 35%,
+                    rgba(0, 0, 0, 0.6) 55%,
+                    rgba(0, 0, 0, 0.3) 75%,
+                    transparent 100%
+                  );
+                  -webkit-mask-image: linear-gradient(
+                    to top,
+                    black 0%,
+                    black 15%,
+                    rgba(0, 0, 0, 0.9) 35%,
+                    rgba(0, 0, 0, 0.6) 55%,
+                    rgba(0, 0, 0, 0.3) 75%,
                     transparent 100%
                   );
                 "
                 aria-hidden="true"
-              ></div>
+              ></div> -->
             </div>
           </div>
         </div>
