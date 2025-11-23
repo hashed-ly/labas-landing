@@ -324,7 +324,7 @@
       "description": "The LABAS application is managed and supported by Egate Company For Information Technology. For any assistance, please contact our customer service team.",
       "phone1": "Phone number 1: +218910579911",
       "phone2": "Phone number 2: +218920579911",
-      "email": "Email: support@labas.ly"
+      "email": "Email: support{'@'}labas.ly"
     },
     "section14": {
       "title": "14. Governing Law",
@@ -339,7 +339,7 @@
       "title": "16. Urgent Communication",
       "description": "In emergencies, users can contact the 'LABAS' support team through the following channels:",
       "emergencyPhone": "Emergency phone: +218920579911",
-      "emergencyEmail": "Emergency Email: support@labas.ly"
+      "emergencyEmail": "Emergency Email: support{'@'}labas.ly"
     },
     "section17": {
       "title": "17. Notification of Amendments",
@@ -573,9 +573,9 @@
         "channels": [
           {
             "title": "Email Support",
-            "detail": "support@labas.ly",
+            "detail": "support{'@'}labas.ly",
             "cta": "Send email",
-            "href": "mailto:support@labas.ly"
+            "href": "mailto:support{'@'}labas.ly"
           },
           {
             "title": "24/7 Hotline",

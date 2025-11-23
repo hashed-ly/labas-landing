@@ -129,7 +129,7 @@ const currentYear = new Date().getFullYear();
         <!-- Social Links -->
         <div class="flex gap-4">
           <a
-            href="https://www.facebook.com/labas.ly"
+            href="https://www.facebook.com/LabasAppLy"
             target="_blank"
             rel="noopener noreferrer"
             class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -142,7 +142,7 @@ const currentYear = new Date().getFullYear();
             </svg>
           </a>
           <a
-            href="https://www.instagram.com/labas.ly"
+            href="https://www.instagram.com/labasapply"
             target="_blank"
             rel="noopener noreferrer"
             class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -162,7 +162,7 @@ const currentYear = new Date().getFullYear();
             </svg>
           </a>
           <a
-            href="https://www.x.com/labas.ly"
+            href="https://x.com/LabasAppLy"
             target="_blank"
             rel="noopener noreferrer"
             class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"

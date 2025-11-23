@@ -324,7 +324,7 @@
       "description": "يتم إدارة ودعم تطبيق لا باس من قبل شركة جيت لتقنية المعلومات. للحصول على أي مساعدة، يرجى الاتصال بفريق خدمة العملاء لدينا.",
       "phone1": "رقم الهاتف 1: +218910579911",
       "phone2": "رقم الهاتف 2: +218920579911",
-      "email": "البريد الإلكتروني: support@labas.ly"
+      "email": "البريد الإلكتروني: support{'@'}labas.ly"
     },
     "section14": {
       "title": "14. القانون الحاكم",
@@ -339,7 +339,7 @@
       "title": "16. التواصل العاجل",
       "description": "في حالات الطوارئ، يمكن للمستخدمين الاتصال بفريق دعم 'لا باس' من خلال القنوات التالية:",
       "emergencyPhone": "الهاتف الطارئ: +218920579911",
-      "emergencyEmail": "البريد الإلكتروني الطارئ: support@labas.ly"
+      "emergencyEmail": "البريد الإلكتروني الطارئ: support{'@'}labas.ly"
     },
     "section17": {
       "title": "17. إشعار التعديلات",
@@ -573,9 +573,9 @@
         "channels": [
           {
             "title": "دعم البريد الإلكتروني",
-            "detail": "support@labas.ly",
+            "detail": "support{'@'}labas.ly",
             "cta": "إرسال بريد",
-            "href": "mailto:support@labas.ly"
+            "href": "mailto:support{'@'}labas.ly"
           },
           {
             "title": "الخط الساخن 24/7",
