@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { useI18n } from '../../../composables/useI18n';
 import { useIntersectionObserver } from '../../../composables/useIntersectionObserver';
 
@@ -17,8 +17,42 @@ const formData = ref({
 const turnstileToken = ref('');
 const turnstileWidgetId = ref(null);
 const siteKey = import.meta.env.VITE_CLOUDFLARE_SITE_KEY || '1x00000000000000000000AA';
+const submitStatus = ref(''); // 'success', 'error', or ''
+const isSubmitting = ref(false);
+const errorMessage = ref('');
 
-onMounted(() => {
+const renderTurnstile = () => {
+  const widgetContainer = document.getElementById('turnstile-widget');
+  if (!widgetContainer || turnstileWidgetId.value !== null) return;
+  
+  if (window.turnstile) {
+    try {
+      turnstileWidgetId.value = window.turnstile.render('#turnstile-widget', {
+        sitekey: siteKey,
+        callback: (token) => {
+          turnstileToken.value = token;
+          console.log('Turnstile token received');
+        },
+        'expired-callback': () => {
+          turnstileToken.value = '';
+          console.log('Turnstile token expired');
+        },
+        'error-callback': () => {
+          console.error('Turnstile error');
+        },
+      });
+      console.log('Turnstile widget rendered with ID:', turnstileWidgetId.value);
+    } catch (error) {
+      console.error('Turnstile render error:', error);
+    }
+  } else {
+    console.warn('Turnstile not available on window object');
+  }
+};
+
+onMounted(async () => {
+  await nextTick();
+  
   // Load Turnstile
   if (!document.getElementById('turnstile-script')) {
     const script = document.createElement('script');
@@ -26,41 +60,102 @@ onMounted(() => {
     script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
     script.async = true;
     script.defer = true;
-    document.head.appendChild(script);
-
+    
     script.onload = () => {
-      if (window.turnstile) {
-        window.turnstile.ready(renderTurnstile);
-      }
+      console.log('Turnstile script loaded');
+      // Wait a bit for the API to be ready
+      setTimeout(renderTurnstile, 100);
     };
+    
+    script.onerror = () => {
+      console.error('Failed to load Turnstile script');
+    };
+    
+    document.head.appendChild(script);
   } else if (window.turnstile) {
     renderTurnstile();
   }
 });
 
-const renderTurnstile = () => {
-  if (turnstileWidgetId.value || !document.getElementById('turnstile-widget')) return;
-  
-  turnstileWidgetId.value = window.turnstile.render('#turnstile-widget', {
-    sitekey: siteKey,
-    callback: (token) => {
-      turnstileToken.value = token;
-    },
-    'expired-callback': () => {
-      turnstileToken.value = '';
-    },
-  });
-};
-
 const handleSubmit = async () => {
+  // Reset status
+  submitStatus.value = '';
+  errorMessage.value = '';
+
+  // Validate Turnstile
   if (!turnstileToken.value) {
-    alert(locale.value === 'ar' ? 'الرجاء التحقق من أنك لست روبوت' : 'Please verify you are not a robot');
+    errorMessage.value = locale.value === 'ar' 
+      ? 'الرجاء التحقق من أنك لست روبوت' 
+      : 'Please verify you are not a robot';
+    submitStatus.value = 'error';
     return;
   }
 
-  // Form submission will be handled via Mailgun API
-  console.log('Submitting form:', { ...formData.value, token: turnstileToken.value });
-  // TODO: Integrate with Mailgun API endpoint
+  // Validate required fields
+  if (!formData.value.name || !formData.value.email || !formData.value.message) {
+    errorMessage.value = locale.value === 'ar'
+      ? 'الرجاء ملء جميع الحقول المطلوبة'
+      : 'Please fill in all required fields';
+    submitStatus.value = 'error';
+    return;
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.value.email)) {
+    errorMessage.value = locale.value === 'ar'
+      ? 'الرجاء إدخال بريد إلكتروني صحيح'
+      : 'Please enter a valid email address';
+    submitStatus.value = 'error';
+    return;
+  }
+
+  isSubmitting.value = true;
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData.value,
+        token: turnstileToken.value,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      submitStatus.value = 'success';
+      // Reset form
+      formData.value = {
+        name: '',
+        email: '',
+        phone: '',
+        subject: 'general',
+        message: '',
+      };
+      turnstileToken.value = '';
+      // Reset Turnstile widget
+      if (window.turnstile && turnstileWidgetId.value !== null) {
+        window.turnstile.reset(turnstileWidgetId.value);
+      }
+    } else {
+      submitStatus.value = 'error';
+      errorMessage.value = result.error || (locale.value === 'ar'
+        ? 'حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى.'
+        : 'An error occurred while sending your message. Please try again.');
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    submitStatus.value = 'error';
+    errorMessage.value = locale.value === 'ar'
+      ? 'فشل الاتصال بالخادم. الرجاء التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.'
+      : 'Failed to connect to the server. Please check your internet connection and try again.';
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 </script>
 
@@ -186,13 +281,22 @@ const handleSubmit = async () => {
                     <h4 class="font-semibold text-text mb-1">
                       {{ locale === 'ar' ? 'الهاتف' : 'Phone' }}
                     </h4>
-                    <a
-                      :href="`tel:${t('contact.phone').replace(/[\s-]/g, '')}`"
-                      class="text-text/70 hover:text-accent transition-colors"
-                      dir="ltr"
-                    >
-                      {{ t('contact.phone') }}
-                    </a>
+                    <div class="space-y-1">
+                      <a
+                        :href="`tel:${t('contact.phone').replace(/[\s-]/g, '')}`"
+                        class="block text-text/70 hover:text-accent transition-colors"
+                        dir="ltr"
+                      >
+                        {{ t('contact.phone') }}
+                      </a>
+                      <a
+                        :href="`tel:${t('contact.phone2').replace(/[\s-]/g, '')}`"
+                        class="block text-text/70 hover:text-accent transition-colors"
+                        dir="ltr"
+                      >
+                        {{ t('contact.phone2') }}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -265,6 +369,55 @@ const handleSubmit = async () => {
             }"
           >
             <form @submit.prevent="handleSubmit" class="space-y-6">
+              <!-- Success Message -->
+              <div
+                v-if="submitStatus === 'success'"
+                class="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3"
+              >
+                <svg
+                  class="w-5 h-5 text-green-600 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-green-800">
+                    {{ locale === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Message sent successfully!' }}
+                  </p>
+                  <p class="text-sm text-green-700 mt-1">
+                    {{ locale === 'ar' ? 'سنتواصل معك قريبًا.' : 'We\'ll get back to you soon.' }}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Error Message -->
+              <div
+                v-if="submitStatus === 'error'"
+                class="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3"
+              >
+                <svg
+                  class="w-5 h-5 text-red-600 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-red-800">
+                    {{ errorMessage }}
+                  </p>
+                </div>
+              </div>
+
               <div>
                 <label class="block text-sm font-medium text-text mb-2">
                   {{ locale === 'ar' ? 'الاسم' : 'Name' }}
@@ -377,9 +530,35 @@ const handleSubmit = async () => {
 
               <button
                 type="submit"
-                class="w-full px-6 py-4 bg-secondary text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 cursor-pointer transition-all"
+                :disabled="isSubmitting"
+                class="w-full px-6 py-4 bg-secondary text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 cursor-pointer transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:translate-y-0"
               >
-                {{ locale === 'ar' ? 'إرسال الرسالة' : 'Send Message' }}
+                <span v-if="!isSubmitting">
+                  {{ locale === 'ar' ? 'إرسال الرسالة' : 'Send Message' }}
+                </span>
+                <span v-else class="flex items-center justify-center gap-2">
+                  <svg
+                    class="animate-spin h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  {{ locale === 'ar' ? 'جاري الإرسال...' : 'Sending...' }}
+                </span>
               </button>
             </form>
           </div>

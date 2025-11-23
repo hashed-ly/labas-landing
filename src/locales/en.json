@@ -75,6 +75,7 @@
     "location": "Forth Ring Road, Benghazi, Libya",
     "email": "support{'@'}labas.ly",
     "phone": "+218 91-057 9911",
+    "phone2": "+218 92-057 9911",
     "developer": {
       "name": "Labas Health Services Company",
       "email": "salah{'@'}labas.ly",
@@ -679,7 +680,7 @@
       },
       "support": {
         "title": "24/7 Support",
-        "description": "Email: support{'@'}labas.ly | Phone: +218 91-4285424 | Live Chat available 24/7."
+        "description": "Email: support{'@'}labas.ly | Phone: +218 91-057 9911 | Live Chat available 24/7."
       }
     },
     "stats": {
@@ -790,7 +791,7 @@
       "loginButton": "Login to Dashboard",
       "supportTitle": "Need Help?",
       "email": "support{'@'}labas.ly",
-      "phone": "+218 91-4285424",
+      "phone": "+218 91-057 9911",
       "liveChat": "Live Chat available 24/7"
     },
     "faq": {

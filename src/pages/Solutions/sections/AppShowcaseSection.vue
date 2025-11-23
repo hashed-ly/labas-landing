@@ -34,7 +34,7 @@ const isArabic = computed(() => locale.value === 'ar');
               class="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl"
             >
               <img
-                src="/images/screenshots/Holding Phone - Facilities Screen.png"
+                src="/images/screenshots/Holding Phone - Facilities Screen.webp"
                 alt="Labas App - Facilities Screen"
                 class="w-full h-auto object-contain"
                 loading="lazy"

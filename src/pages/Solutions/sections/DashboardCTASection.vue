@@ -74,7 +74,7 @@ const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
               </a>
               <span class="text-white/50">|</span>
               <a
-                href="tel:+218914285424"
+                href="tel:+218910579911"
                 class="text-white/90 hover:text-white transition-colors"
                 dir="ltr"
               >

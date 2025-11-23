@@ -89,7 +89,7 @@ const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
               class="relative w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg"
             >
               <img
-                src="/images/screenshots/Phone - Home Screen.png"
+                src="/images/screenshots/Phone - Home Screen.webp"
                 alt="Labas App"
                 class="w-full h-auto object-contain"
                 loading="eager"

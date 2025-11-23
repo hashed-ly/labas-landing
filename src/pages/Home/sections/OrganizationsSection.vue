@@ -102,7 +102,7 @@ const services = [
             <div class="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm">
               <!-- Phone Image -->
               <img
-                src="/images/screenshots/iPhone Air.png"
+                src="/images/screenshots/iPhone Air.webp"
                 alt="Labas App - Services"
                 class="w-full h-auto drop-shadow-2xl"
                 loading="lazy"

@@ -124,7 +124,7 @@ const benefits = [
           >
             <div class="relative w-full max-w-sm md:max-w-md">
               <img
-                src="/images/screenshots/Holding Phone - Bookings Screen.png"
+                src="/images/screenshots/Holding Phone - Bookings Screen.webp"
                 alt="Labas App - Bookings Screen"
                 class="w-full h-auto object-contain"
                 loading="lazy"

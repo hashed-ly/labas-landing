@@ -112,6 +112,15 @@ const currentYear = new Date().getFullYear();
               </a>
             </li>
             <li>
+              <a
+                :href="`tel:${t('contact.phone2').replace(/[\s-]/g, '')}`"
+                class="text-white/70 hover:text-white transition-colors"
+                dir="ltr"
+              >
+                {{ t('contact.phone2') }}
+              </a>
+            </li>
+            <li>
               <p class="text-white/70">{{ t('footer.location') }}</p>
             </li>
           </ul>

@@ -2,15 +2,49 @@
 
 ## 📧 Contact Form Setup
 
-The contact form in `src/pages/Home/sections/ContactSection.vue` is ready for Mailgun integration.
+The contact form in `src/pages/Home/sections/ContactSection.vue` is **fully implemented** with:
 
-### Current Implementation
+- ✅ Cloudflare Turnstile verification
+- ✅ Form validation (client-side)
+- ✅ Success/error states with user feedback
+- ✅ Loading states during submission
+- ✅ Automatic form reset after success
+- ✅ Turnstile widget reset after submission
+
+### Quick Start
+
+#### 1. Frontend Setup
+
+Create a `.env` file in the **root directory**:
+
+```env
+VITE_CLOUDFLARE_SITE_KEY=0x4AAAAAAA5AFw08J9so---z
+```
+
+#### 2. Backend Setup
+
+A complete Express.js server is provided in the `server/` directory.
+
+```bash
+cd server
+npm install
+cp .env.example .env
+# Edit .env with your credentials
+npm run dev
+```
+
+See `server/README.md` for detailed setup instructions.
+
+### Form Fields
 
 The form collects:
-- Name (required)
-- Email (required)
-- Phone (optional)
-- Message (required)
+
+- **Name** (required)
+- **Email** (required, with format validation)
+- **Phone** (optional)
+- **Subject** (required, dropdown: General, Support, Sales, Partnership, Other)
+- **Message** (required)
+- **Turnstile Token** (required, automatically captured)
 
 ### Integration Steps
 
@@ -62,17 +96,22 @@ The form collects:
      const { name, email, phone, message, token } = req.body;
 
      // Verify Turnstile Token
-     const verifyResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-       method: 'POST',
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify({
-         secret: process.env.TURNSTILE_SECRET_KEY,
-         response: token,
-       }),
-     });
+     const verifyResponse = await fetch(
+       'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+       {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({
+           secret: process.env.TURNSTILE_SECRET_KEY,
+           response: token,
+         }),
+       }
+     );
      const verifyResult = await verifyResponse.json();
      if (!verifyResult.success) {
-       return res.status(400).json({ success: false, error: 'Invalid captcha' });
+       return res
+         .status(400)
+         .json({ success: false, error: 'Invalid captcha' });
      }
 
      const messageData = {
@@ -125,6 +164,7 @@ The form collects:
 6. **User Feedback**
 
    Add success/error messages:
+
    ```vue
    <div v-if="submitStatus === 'success'" class="success-message">
      {{ t('contact.form.success') }}
@@ -150,4 +190,3 @@ The form collects:
 3. Test error handling (network errors, server errors)
 4. Verify emails are received correctly
 5. Test in both Arabic and English
-
