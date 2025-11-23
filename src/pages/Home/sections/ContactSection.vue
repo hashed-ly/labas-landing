@@ -205,7 +205,7 @@ const handleSubmit = async () => {
               </h4>
               <div class="flex gap-3">
                 <a
-                  href="https://www.facebook.com/labas.ly"
+                  href="https://www.facebook.com/LabasAppLy"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
@@ -217,7 +217,7 @@ const handleSubmit = async () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/labas.ly"
+                  href="https://www.instagram.com/labasapply"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
@@ -236,7 +236,7 @@ const handleSubmit = async () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.x.com/labas.ly"
+                  href="https://x.com/LabasAppLy"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
