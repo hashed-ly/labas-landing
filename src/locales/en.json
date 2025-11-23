@@ -84,6 +84,14 @@
       "name": "Full Name",
       "email": "Email Address",
       "phone": "Phone Number (optional)",
+      "subject": "Subject",
+      "subjects": {
+        "general": "General Inquiry",
+        "support": "Technical Support",
+        "sales": "Sales & Business",
+        "partnership": "Partnership",
+        "other": "Other"
+      },
       "message": "Your Message",
       "submit": "Send Message"
     }

@@ -76,6 +76,7 @@ const { targetRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
               <a
                 href="tel:+218914285424"
                 class="text-white/90 hover:text-white transition-colors"
+                dir="ltr"
               >
                 {{ t('dashboardPage.cta.phone') }}
               </a>

@@ -519,12 +519,12 @@ onUnmounted(() => {
                       support@labas.ly
                     </li>
                     <li>
-                      • {{ t('privacy.section9.contact.phone1') }}: +218 91-057
-                      9911
+                      • {{ t('privacy.section9.contact.phone1') }}:
+                      <span dir="ltr">+218 91-057 9911</span>
                     </li>
                     <li>
-                      • {{ t('privacy.section9.contact.phone2') }}: +218 92-057
-                      9911
+                      • {{ t('privacy.section9.contact.phone2') }}:
+                      <span dir="ltr">+218 92-057 9911</span>
                     </li>
                     <li>• {{ t('privacy.section9.contact.app') }}</li>
                   </ul>

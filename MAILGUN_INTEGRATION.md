@@ -59,7 +59,21 @@ The form collects:
    });
 
    app.post('/api/contact', async (req, res) => {
-     const { name, email, phone, message } = req.body;
+     const { name, email, phone, message, token } = req.body;
+
+     // Verify Turnstile Token
+     const verifyResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify({
+         secret: process.env.TURNSTILE_SECRET_KEY,
+         response: token,
+       }),
+     });
+     const verifyResult = await verifyResponse.json();
+     if (!verifyResult.success) {
+       return res.status(400).json({ success: false, error: 'Invalid captcha' });
+     }
 
      const messageData = {
        from: `Contact Form <noreply@labas.ly>`,
@@ -98,6 +112,7 @@ The form collects:
    Set these in your backend:
    - `MAILGUN_API_KEY` - Your Mailgun API key
    - `MAILGUN_DOMAIN` - Your verified Mailgun domain (e.g., `mg.labas.ly`)
+   - `TURNSTILE_SECRET_KEY` - Cloudflare Turnstile Secret Key
 
 5. **Form Validation**
 

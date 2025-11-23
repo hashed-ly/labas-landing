@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useI18n } from '../../../composables/useI18n';
 import { useIntersectionObserver } from '../../../composables/useIntersectionObserver';
 
@@ -10,13 +10,57 @@ const formData = ref({
   name: '',
   email: '',
   phone: '',
+  subject: 'general',
   message: '',
 });
 
+const turnstileToken = ref('');
+const turnstileWidgetId = ref(null);
+const siteKey = import.meta.env.VITE_CLOUDFLARE_SITE_KEY || '1x00000000000000000000AA';
+
+onMounted(() => {
+  // Load Turnstile
+  if (!document.getElementById('turnstile-script')) {
+    const script = document.createElement('script');
+    script.id = 'turnstile-script';
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      if (window.turnstile) {
+        window.turnstile.ready(renderTurnstile);
+      }
+    };
+  } else if (window.turnstile) {
+    renderTurnstile();
+  }
+});
+
+const renderTurnstile = () => {
+  if (turnstileWidgetId.value || !document.getElementById('turnstile-widget')) return;
+  
+  turnstileWidgetId.value = window.turnstile.render('#turnstile-widget', {
+    sitekey: siteKey,
+    callback: (token) => {
+      turnstileToken.value = token;
+    },
+    'expired-callback': () => {
+      turnstileToken.value = '';
+    },
+  });
+};
+
 const handleSubmit = async () => {
+  if (!turnstileToken.value) {
+    alert(locale.value === 'ar' ? 'الرجاء التحقق من أنك لست روبوت' : 'Please verify you are not a robot');
+    return;
+  }
+
   // Form submission will be handled via Mailgun API
+  console.log('Submitting form:', { ...formData.value, token: turnstileToken.value });
   // TODO: Integrate with Mailgun API endpoint
-  // Example: POST to your backend endpoint which forwards to Mailgun
 };
 </script>
 
@@ -269,6 +313,51 @@ const handleSubmit = async () => {
 
               <div>
                 <label class="block text-sm font-medium text-text mb-2">
+                  {{ t('contact.form.subject') }}
+                </label>
+                <div class="relative">
+                  <select
+                    v-model="formData.subject"
+                    class="w-full px-4 py-3 rounded-lg border border-text/10 bg-white focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all appearance-none"
+                  >
+                    <option value="general">
+                      {{ t('contact.form.subjects.general') }}
+                    </option>
+                    <option value="support">
+                      {{ t('contact.form.subjects.support') }}
+                    </option>
+                    <option value="sales">
+                      {{ t('contact.form.subjects.sales') }}
+                    </option>
+                    <option value="partnership">
+                      {{ t('contact.form.subjects.partnership') }}
+                    </option>
+                    <option value="other">
+                      {{ t('contact.form.subjects.other') }}
+                    </option>
+                  </select>
+                  <div
+                    class="absolute top-1/2 end-4 -translate-y-1/2 pointer-events-none text-text/50"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-text mb-2">
                   {{ locale === 'ar' ? 'الرسالة' : 'Message' }}
                 </label>
                 <textarea
@@ -283,6 +372,8 @@ const handleSubmit = async () => {
                   "
                 ></textarea>
               </div>
+
+              <div id="turnstile-widget" class="min-h-[65px]"></div>
 
               <button
                 type="submit"
