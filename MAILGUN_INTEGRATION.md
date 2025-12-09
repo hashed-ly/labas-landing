@@ -18,8 +18,10 @@ The contact form in `src/pages/Home/sections/ContactSection.vue` is **fully impl
 Create a `.env` file in the **root directory**:
 
 ```env
-VITE_CLOUDFLARE_SITE_KEY=0x4AAAAAAA5AFw08J9so---z
+VITE_CLOUDFLARE_SITE_KEY=0x4AAAAAACFlVXsg3EdiBwxf
 ```
+
+**Production Turnstile Site Key:** `0x4AAAAAACFlVXsg3EdiBwxf`
 
 #### 2. Backend Setup
 
@@ -151,7 +153,11 @@ The form collects:
    Set these in your backend:
    - `MAILGUN_API_KEY` - Your Mailgun API key
    - `MAILGUN_DOMAIN` - Your verified Mailgun domain (e.g., `mg.labas.ly`)
-   - `TURNSTILE_SECRET_KEY` - Cloudflare Turnstile Secret Key
+   - `TURNSTILE_SECRET_KEY` - Cloudflare Turnstile Secret Key: `0x4AAAAAACFlVerbyDX0KoS3rz8OSA1YZrs`
+
+   **Production Turnstile Keys:**
+   - Site Key (Frontend): `0x4AAAAAACFlVXsg3EdiBwxf`
+   - Secret Key (Backend): `0x4AAAAAACFlVerbyDX0KoS3rz8OSA1YZrs`
 
 5. **Form Validation**
 

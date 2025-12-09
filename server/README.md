@@ -40,7 +40,7 @@ MAILGUN_API_KEY=your_mailgun_api_key_here
 MAILGUN_DOMAIN=mg.labas.ly
 
 # Cloudflare Turnstile
-TURNSTILE_SECRET_KEY=0x4AAAAAAA5AFyrxyN6i-H_oZUm7Sf6HtkU
+TURNSTILE_SECRET_KEY=0x4AAAAAACFlVerbyDX0KoS3rz8OSA1YZrs
 ```
 
 ### 3. Start the Server
