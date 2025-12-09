@@ -146,36 +146,38 @@ const validateForm = () => {
     return locale.value === 'ar' ? 'يرجى إدخال رقم الهاتف الرسمي' : 'Please enter official phone number';
   }
 
-  // Authorized Person Details
-  if (!formData.value.authorizedPersonName) {
-    return locale.value === 'ar' ? 'يرجى إدخال اسم الشخص المصرح' : 'Please enter authorized person name';
-  }
-  if (!formData.value.authorizedPersonPosition) {
-    return locale.value === 'ar' ? 'يرجى إدخال المنصب' : 'Please enter position';
-  }
-  if (!formData.value.authorizedPersonNationalId) {
-    return locale.value === 'ar' ? 'يرجى إدخال رقم الهوية الوطنية' : 'Please enter national ID';
-  }
-  if (!formData.value.authorizedPersonPhone) {
-    return locale.value === 'ar' ? 'يرجى إدخال رقم هاتف الشخص المصرح' : 'Please enter authorized person phone';
-  }
-  if (!formData.value.authorizedPersonEmail) {
-    return locale.value === 'ar' ? 'يرجى إدخال بريد الشخص المصرح' : 'Please enter authorized person email';
-  }
-  if (!emailRegex.test(formData.value.authorizedPersonEmail)) {
-    return locale.value === 'ar' ? 'يرجى إدخال بريد إلكتروني صحيح للشخص المصرح' : 'Please enter a valid email address for authorized person';
-  }
+  // Authorized Person Details (Hidden - validation skipped for now)
+  // TODO: Re-enable validation when section is re-added
+  // if (!formData.value.authorizedPersonName) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال اسم الشخص المصرح' : 'Please enter authorized person name';
+  // }
+  // if (!formData.value.authorizedPersonPosition) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال المنصب' : 'Please enter position';
+  // }
+  // if (!formData.value.authorizedPersonNationalId) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال رقم الهوية الوطنية' : 'Please enter national ID';
+  // }
+  // if (!formData.value.authorizedPersonPhone) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال رقم هاتف الشخص المصرح' : 'Please enter authorized person phone';
+  // }
+  // if (!formData.value.authorizedPersonEmail) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال بريد الشخص المصرح' : 'Please enter authorized person email';
+  // }
+  // if (!emailRegex.test(formData.value.authorizedPersonEmail)) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال بريد إلكتروني صحيح للشخص المصرح' : 'Please enter a valid email address for authorized person';
+  // }
 
-  // Banking Information
-  if (!formData.value.bankName) {
-    return locale.value === 'ar' ? 'يرجى إدخال اسم البنك' : 'Please enter bank name';
-  }
-  if (!formData.value.accountHolderName) {
-    return locale.value === 'ar' ? 'يرجى إدخال اسم صاحب الحساب' : 'Please enter account holder name';
-  }
-  if (!formData.value.iban) {
-    return locale.value === 'ar' ? 'يرجى إدخال رقم الآيبان' : 'Please enter IBAN';
-  }
+  // Banking Information (Hidden - validation skipped for now)
+  // TODO: Re-enable validation when section is re-added
+  // if (!formData.value.bankName) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال اسم البنك' : 'Please enter bank name';
+  // }
+  // if (!formData.value.accountHolderName) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال اسم صاحب الحساب' : 'Please enter account holder name';
+  // }
+  // if (!formData.value.iban) {
+  //   return locale.value === 'ar' ? 'يرجى إدخال رقم الآيبان' : 'Please enter IBAN';
+  // }
 
   // Terms
   if (!formData.value.termsAccepted) {
@@ -295,7 +297,7 @@ const handleSubmit = async () => {
 
         <!-- Form -->
         <div
-          class="space-y-6 md:space-y-8"
+          class="bg-bg rounded-2xl p-8 shadow"
           :class="{
             'opacity-0': !isVisible,
             'animate-fade-in-up delay-100': isVisible,
@@ -352,11 +354,10 @@ const handleSubmit = async () => {
             </div>
 
             <!-- Section 1: Organization Information -->
-            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-text/5">
+            <div class="space-y-6">
               <h2 class="text-xl md:text-2xl font-bold text-text mb-6">
                 {{ t('kyc.sections.organization.title') }}
               </h2>
-              <div class="space-y-6">
 
                 <div class="grid md:grid-cols-2 gap-4 md:gap-6">
                   <div>
@@ -517,11 +518,10 @@ const handleSubmit = async () => {
                     :placeholder="t('kyc.sections.organization.websitePlaceholder')"
                   />
                 </div>
-              </div>
             </div>
 
-            <!-- Section 2: Authorized Person Details -->
-            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-text/5">
+            <!-- Section 2: Authorized Person Details (Hidden - will be re-added later) -->
+            <div v-show="false" class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-text/5">
               <h2 class="text-xl md:text-2xl font-bold text-text mb-6">
                 {{ t('kyc.sections.authorizedPerson.title') }}
               </h2>
@@ -597,8 +597,8 @@ const handleSubmit = async () => {
               </div>
             </div>
 
-            <!-- Section 3: Banking Information -->
-            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-text/5">
+            <!-- Section 3: Banking Information (Hidden - will be re-added later) -->
+            <div v-show="false" class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-text/5">
               <h2 class="text-xl md:text-2xl font-bold text-text mb-6">
                 {{ t('kyc.sections.banking.title') }}
               </h2>
@@ -645,7 +645,7 @@ const handleSubmit = async () => {
             </div>
 
             <!-- Section 4: Terms & Conditions -->
-            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-text/5">
+            <div class="pt-8 border-t border-text/10">
               <h2 class="text-xl md:text-2xl font-bold text-text mb-6">
                 {{ t('kyc.sections.terms.title') }}
               </h2>

@@ -37,7 +37,8 @@ export default async function handler(req, res) {
     token,
   } = req.body;
 
-  // Validate required fields
+  // Validate required fields (only Organization Information section is required for now)
+  // Authorized Person and Banking sections are hidden and will be re-added later
   if (
     !organizationNameArabic ||
     !organizationNameEnglish ||
@@ -46,14 +47,6 @@ export default async function handler(req, res) {
     !address ||
     !officialEmail ||
     !officialPhone ||
-    !authorizedPersonName ||
-    !authorizedPersonPosition ||
-    !authorizedPersonNationalId ||
-    !authorizedPersonPhone ||
-    !authorizedPersonEmail ||
-    !bankName ||
-    !accountHolderName ||
-    !iban ||
     !termsAccepted ||
     !token
   ) {
@@ -115,17 +108,17 @@ Website: ${website || 'Not provided'}
 
 AUTHORIZED PERSON DETAILS
 =========================
-Full Name: ${authorizedPersonName}
-Position: ${authorizedPersonPosition}
-National ID/Passport: ${authorizedPersonNationalId}
-Phone: ${authorizedPersonPhone}
-Email: ${authorizedPersonEmail}
+Full Name: ${authorizedPersonName || 'Not provided (section hidden)'}
+Position: ${authorizedPersonPosition || 'Not provided (section hidden)'}
+National ID/Passport: ${authorizedPersonNationalId || 'Not provided (section hidden)'}
+Phone: ${authorizedPersonPhone || 'Not provided (section hidden)'}
+Email: ${authorizedPersonEmail || 'Not provided (section hidden)'}
 
 BANKING INFORMATION
 ==================
-Bank Name: ${bankName}
-Account Holder: ${accountHolderName}
-IBAN: ${iban}
+Bank Name: ${bankName || 'Not provided (section hidden)'}
+Account Holder: ${accountHolderName || 'Not provided (section hidden)'}
+IBAN: ${iban || 'Not provided (section hidden)'}
 
 TERMS & CONDITIONS
 ==================
@@ -403,56 +396,56 @@ function generateKYCEmailHTML(data) {
         </div>
       </div>
 
-      <!-- Authorized Person Details -->
+      <!-- Authorized Person Details (Hidden - will be re-added later) -->
       <div class="section">
         <h2 class="section-title">2. Authorized Person Details</h2>
         
         <div class="field-group">
           <div class="field">
             <div class="label">👤 Full Name</div>
-            <div class="value">${data.authorizedPersonName}</div>
+            <div class="value">${data.authorizedPersonName || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
 
           <div class="field">
             <div class="label">💼 Position / Job Title</div>
-            <div class="value">${data.authorizedPersonPosition}</div>
+            <div class="value">${data.authorizedPersonPosition || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
 
           <div class="field">
             <div class="label">🆔 National ID / Passport Number</div>
-            <div class="value">${data.authorizedPersonNationalId}</div>
+            <div class="value">${data.authorizedPersonNationalId || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
 
           <div class="field">
             <div class="label">📱 Phone Number</div>
-            <div class="value"><a href="tel:${data.authorizedPersonPhone.replace(/[\s-]/g, '')}">${data.authorizedPersonPhone}</a></div>
+            <div class="value">${data.authorizedPersonPhone ? `<a href="tel:${data.authorizedPersonPhone.replace(/[\s-]/g, '')}">${data.authorizedPersonPhone}</a>` : '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
 
           <div class="field">
             <div class="label">📧 Email Address</div>
-            <div class="value"><a href="mailto:${data.authorizedPersonEmail}">${data.authorizedPersonEmail}</a></div>
+            <div class="value">${data.authorizedPersonEmail ? `<a href="mailto:${data.authorizedPersonEmail}">${data.authorizedPersonEmail}</a>` : '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
         </div>
       </div>
 
-      <!-- Banking Information -->
+      <!-- Banking Information (Hidden - will be re-added later) -->
       <div class="section">
         <h2 class="section-title">3. Banking & Payment Information</h2>
         
         <div class="field-group">
           <div class="field">
             <div class="label">🏦 Bank Name</div>
-            <div class="value">${data.bankName}</div>
+            <div class="value">${data.bankName || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
 
           <div class="field">
             <div class="label">👤 Account Holder Name</div>
-            <div class="value">${data.accountHolderName}</div>
+            <div class="value">${data.accountHolderName || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
 
           <div class="field">
             <div class="label">💳 IBAN</div>
-            <div class="value">${data.iban}</div>
+            <div class="value">${data.iban || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
         </div>
       </div>

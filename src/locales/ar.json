@@ -1003,11 +1003,11 @@
     "subtitle": "أكمل النموذج أدناه لتسجيل مؤسستك مع لا باس",
     "sections": {
       "organization": {
-        "title": "1. معلومات المؤسسة",
+        "title": "معلومات المؤسسة",
         "nameArabic": "اسم المؤسسة (بالعربية)",
         "nameEnglish": "اسم المؤسسة (بالإنجليزية)",
-        "nameArabicPlaceholder": "مثال: مستشفى السلام",
-        "nameEnglishPlaceholder": "مثال: Al-Salam Hospital",
+        "nameArabicPlaceholder": "مستشفى السلام",
+        "nameEnglishPlaceholder": "Al-Salam Hospital",
         "type": "نوع المؤسسة",
         "types": {
           "hospital": "مستشفى",
@@ -1019,42 +1019,42 @@
           "other": "أخرى"
         },
         "commercialRegistration": "رقم السجل التجاري",
-        "commercialRegistrationPlaceholder": "مثال: 12345",
+        "commercialRegistrationPlaceholder": "12345",
         "taxId": "الرقم الضريبي",
-        "taxIdPlaceholder": "مثال: TAX-123456",
+        "taxIdPlaceholder": "TAX-123456",
         "address": "العنوان (المدينة، المنطقة، الشارع)",
-        "addressPlaceholder": "مثال: بنغازي، وسط المدينة، شارع الرئيسي",
+        "addressPlaceholder": "بنغازي، وسط المدينة، شارع الرئيسي",
         "email": "البريد الإلكتروني الرسمي",
-        "emailPlaceholder": "مثال: info{'@'}organization.ly",
+        "emailPlaceholder": "info{'@'}organization.ly",
         "phone": "رقم الهاتف الرسمي",
-        "phonePlaceholder": "مثال: +218 91-234-5678",
+        "phonePlaceholder": "+218 91-234-5678",
         "website": "الموقع الإلكتروني (اختياري)",
-        "websitePlaceholder": "مثال: https://www.organization.ly"
+        "websitePlaceholder": "https://www.organization.ly"
       },
       "authorizedPerson": {
-        "title": "2. بيانات الشخص المصرح",
+        "title": "بيانات الشخص المصرح",
         "fullName": "الاسم الكامل",
-        "fullNamePlaceholder": "مثال: أحمد علي محمد",
+        "fullNamePlaceholder": "أحمد علي محمد",
         "position": "المنصب / المسمى الوظيفي",
-        "positionPlaceholder": "مثال: المدير العام، المدير التنفيذي",
+        "positionPlaceholder": "المدير العام، المدير التنفيذي",
         "nationalId": "رقم الهوية الوطنية / جواز السفر",
-        "nationalIdPlaceholder": "مثال: 123456789012",
+        "nationalIdPlaceholder": "123456789012",
         "phone": "رقم الهاتف",
-        "phonePlaceholder": "مثال: +218 91-234-5678",
+        "phonePlaceholder": "+218 91-234-5678",
         "email": "البريد الإلكتروني",
-        "emailPlaceholder": "مثال: ahmed{'@'}organization.ly"
+        "emailPlaceholder": "ahmed{'@'}organization.ly"
       },
       "banking": {
-        "title": "3. معلومات البنك والدفع",
+        "title": "معلومات البنك والدفع",
         "bankName": "اسم البنك",
-        "bankNamePlaceholder": "مثال: البنك التجاري الوطني",
+        "bankNamePlaceholder": "البنك التجاري الوطني",
         "accountHolder": "اسم صاحب الحساب",
-        "accountHolderPlaceholder": "مثال: اسم المؤسسة",
+        "accountHolderPlaceholder": "اسم المؤسسة",
         "iban": "رقم الآيبان",
-        "ibanPlaceholder": "مثال: LY123456789012345678901234"
+        "ibanPlaceholder": "LY123456789012345678901234"
       },
       "terms": {
-        "title": "4. الشروط والأحكام",
+        "title": "الشروط والأحكام",
         "confirmation": "أؤكد أن جميع المعلومات المقدمة دقيقة وأوافق على سياسات لا باس.",
         "required": "هذا الحقل مطلوب"
       }

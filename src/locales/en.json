@@ -1003,11 +1003,11 @@
     "subtitle": "Complete the form below to register your organization with Labas",
     "sections": {
       "organization": {
-        "title": "1. Organization Information",
+        "title": "Organization Information",
         "nameArabic": "Organization Name (Arabic)",
         "nameEnglish": "Organization Name (English)",
-        "nameArabicPlaceholder": "مثال: مستشفى السلام",
-        "nameEnglishPlaceholder": "e.g., Al-Salam Hospital",
+        "nameArabicPlaceholder": "مستشفى السلام",
+        "nameEnglishPlaceholder": "Al-Salam Hospital",
         "type": "Type of Organization",
         "types": {
           "hospital": "Hospital",
@@ -1019,42 +1019,42 @@
           "other": "Other"
         },
         "commercialRegistration": "Commercial Registration Number",
-        "commercialRegistrationPlaceholder": "e.g., 12345",
+        "commercialRegistrationPlaceholder": "12345",
         "taxId": "Tax Identification Number",
-        "taxIdPlaceholder": "e.g., TAX-123456",
+        "taxIdPlaceholder": "TAX-123456",
         "address": "Address (City, Area, Street)",
-        "addressPlaceholder": "e.g., Benghazi, Downtown, Main Street",
+        "addressPlaceholder": "Benghazi, Downtown, Main Street",
         "email": "Official Email",
-        "emailPlaceholder": "e.g., info{'@'}organization.ly",
+        "emailPlaceholder": "info{'@'}organization.ly",
         "phone": "Official Phone Number",
-        "phonePlaceholder": "e.g., +218 91-234-5678",
+        "phonePlaceholder": "+218 91-234-5678",
         "website": "Website (optional)",
-        "websitePlaceholder": "e.g., https://www.organization.ly"
+        "websitePlaceholder": "https://www.organization.ly"
       },
       "authorizedPerson": {
-        "title": "2. Authorized Person Details",
+        "title": "Authorized Person Details",
         "fullName": "Full Name",
-        "fullNamePlaceholder": "e.g., Ahmed Ali Mohamed",
+        "fullNamePlaceholder": "Ahmed Ali Mohamed",
         "position": "Position / Job Title",
-        "positionPlaceholder": "e.g., General Manager, Director",
+        "positionPlaceholder": "General Manager, Director",
         "nationalId": "National ID / Passport Number",
-        "nationalIdPlaceholder": "e.g., 123456789012",
+        "nationalIdPlaceholder": "123456789012",
         "phone": "Phone Number",
-        "phonePlaceholder": "e.g., +218 91-234-5678",
+        "phonePlaceholder": "+218 91-234-5678",
         "email": "Email Address",
-        "emailPlaceholder": "e.g., ahmed{'@'}organization.ly"
+        "emailPlaceholder": "ahmed{'@'}organization.ly"
       },
       "banking": {
-        "title": "3. Banking & Payment Information",
+        "title": "Banking & Payment Information",
         "bankName": "Bank Name",
-        "bankNamePlaceholder": "e.g., National Commercial Bank",
+        "bankNamePlaceholder": "National Commercial Bank",
         "accountHolder": "Account Holder Name",
-        "accountHolderPlaceholder": "e.g., Organization Name",
+        "accountHolderPlaceholder": "Organization Name",
         "iban": "IBAN",
-        "ibanPlaceholder": "e.g., LY123456789012345678901234"
+        "ibanPlaceholder": "LY123456789012345678901234"
       },
       "terms": {
-        "title": "4. Terms & Conditions",
+        "title": "Terms & Conditions",
         "confirmation": "I confirm all provided information is accurate and agree to Labas policies.",
         "required": "This field is required"
       }
