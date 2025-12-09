@@ -43,6 +43,11 @@ const router = createRouter({
           component: () => import('../pages/Contact/ContactPage.vue'),
         },
         {
+          path: '/kyc',
+          name: 'kyc',
+          component: () => import('../pages/KYC/KYCPage.vue'),
+        },
+        {
           path: '/v1/Privacy-and-Policy',
           name: 'privacy',
           component: () => import('../components/Privacy.vue'),

@@ -35,12 +35,14 @@ const handleSplashComplete = () => {
     />
 
     <!-- Main Content -->
-    <transition
-      enter-active-class="transition-opacity duration-500"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-    >
-      <router-view v-if="showContent" />
-    </transition>
+    <router-view v-if="showContent" v-slot="{ Component }">
+      <transition
+        enter-active-class="transition-opacity duration-500"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+      >
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>

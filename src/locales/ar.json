@@ -997,5 +997,84 @@
         }
       }
     }
+  },
+  "kyc": {
+    "title": "نموذج تسجيل المؤسسة - لا باس",
+    "subtitle": "أكمل النموذج أدناه لتسجيل مؤسستك مع لا باس",
+    "sections": {
+      "organization": {
+        "title": "1. معلومات المؤسسة",
+        "nameArabic": "اسم المؤسسة (بالعربية)",
+        "nameEnglish": "اسم المؤسسة (بالإنجليزية)",
+        "nameArabicPlaceholder": "مثال: مستشفى السلام",
+        "nameEnglishPlaceholder": "مثال: Al-Salam Hospital",
+        "type": "نوع المؤسسة",
+        "types": {
+          "hospital": "مستشفى",
+          "clinic": "عيادة",
+          "laboratory": "مختبر",
+          "pharmacy": "صيدلية",
+          "radiology": "مركز أشعة",
+          "medicalProvider": "مقدم خدمات طبية",
+          "other": "أخرى"
+        },
+        "commercialRegistration": "رقم السجل التجاري",
+        "commercialRegistrationPlaceholder": "مثال: 12345",
+        "taxId": "الرقم الضريبي",
+        "taxIdPlaceholder": "مثال: TAX-123456",
+        "address": "العنوان (المدينة، المنطقة، الشارع)",
+        "addressPlaceholder": "مثال: بنغازي، وسط المدينة، شارع الرئيسي",
+        "email": "البريد الإلكتروني الرسمي",
+        "emailPlaceholder": "مثال: info{'@'}organization.ly",
+        "phone": "رقم الهاتف الرسمي",
+        "phonePlaceholder": "مثال: +218 91-234-5678",
+        "website": "الموقع الإلكتروني (اختياري)",
+        "websitePlaceholder": "مثال: https://www.organization.ly"
+      },
+      "authorizedPerson": {
+        "title": "2. بيانات الشخص المصرح",
+        "fullName": "الاسم الكامل",
+        "fullNamePlaceholder": "مثال: أحمد علي محمد",
+        "position": "المنصب / المسمى الوظيفي",
+        "positionPlaceholder": "مثال: المدير العام، المدير التنفيذي",
+        "nationalId": "رقم الهوية الوطنية / جواز السفر",
+        "nationalIdPlaceholder": "مثال: 123456789012",
+        "phone": "رقم الهاتف",
+        "phonePlaceholder": "مثال: +218 91-234-5678",
+        "email": "البريد الإلكتروني",
+        "emailPlaceholder": "مثال: ahmed{'@'}organization.ly"
+      },
+      "banking": {
+        "title": "3. معلومات البنك والدفع",
+        "bankName": "اسم البنك",
+        "bankNamePlaceholder": "مثال: البنك التجاري الوطني",
+        "accountHolder": "اسم صاحب الحساب",
+        "accountHolderPlaceholder": "مثال: اسم المؤسسة",
+        "iban": "رقم الآيبان",
+        "ibanPlaceholder": "مثال: LY123456789012345678901234"
+      },
+      "terms": {
+        "title": "4. الشروط والأحكام",
+        "confirmation": "أؤكد أن جميع المعلومات المقدمة دقيقة وأوافق على سياسات لا باس.",
+        "required": "هذا الحقل مطلوب"
+      }
+    },
+    "form": {
+      "submit": "إرسال التسجيل",
+      "submitting": "جاري الإرسال...",
+      "success": {
+        "title": "تم إرسال التسجيل بنجاح!",
+        "message": "شكرًا لتسجيلك مع لا باس. سنراجع طلبك وسنتواصل معك قريبًا."
+      },
+      "error": {
+        "title": "فشل الإرسال",
+        "message": "حدث خطأ أثناء إرسال تسجيلك. يرجى المحاولة مرة أخرى."
+      },
+      "validation": {
+        "required": "هذا الحقل مطلوب",
+        "email": "يرجى إدخال بريد إلكتروني صحيح",
+        "phone": "يرجى إدخال رقم هاتف صحيح"
+      }
+    }
   }
 }

@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import contactHandler from './api/contact.js';
+import kycHandler from './api/kyc.js';
 
 // Load environment variables
 dotenv.config();
@@ -28,6 +29,9 @@ app.get('/api/health', (req, res) => {
 // Contact form endpoint
 app.post('/api/contact', contactHandler);
 
+// KYC registration endpoint
+app.post('/api/kyc', kycHandler);
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Server error:', err);
@@ -41,6 +45,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
   console.log(`📧 Contact form endpoint: http://localhost:${PORT}/api/contact`);
+  console.log(`📋 KYC registration endpoint: http://localhost:${PORT}/api/kyc`);
   console.log(`🔑 Mailgun domain: ${process.env.MAILGUN_DOMAIN || 'Not configured'}`);
   console.log(`🛡️  Turnstile configured: ${process.env.TURNSTILE_SECRET_KEY ? 'Yes' : 'No'}`);
 });

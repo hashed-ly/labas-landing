@@ -16,14 +16,21 @@ const formData = ref({
 
 const turnstileToken = ref('');
 const turnstileWidgetId = ref(null);
-const siteKey = import.meta.env.VITE_CLOUDFLARE_SITE_KEY || '1x00000000000000000000AA';
+const siteKey = import.meta.env.VITE_CLOUDFLARE_SITE_KEY;
 const submitStatus = ref(''); // 'success', 'error', or ''
 const isSubmitting = ref(false);
 const errorMessage = ref('');
+const turnstileError = ref(false);
 
 const renderTurnstile = () => {
   const widgetContainer = document.getElementById('turnstile-widget');
   if (!widgetContainer || turnstileWidgetId.value !== null) return;
+  
+  if (!siteKey) {
+    console.error('Cloudflare Turnstile site key is not configured');
+    turnstileError.value = true;
+    return;
+  }
   
   if (window.turnstile) {
     try {
@@ -31,19 +38,19 @@ const renderTurnstile = () => {
         sitekey: siteKey,
         callback: (token) => {
           turnstileToken.value = token;
-          console.log('Turnstile token received');
+          turnstileError.value = false;
         },
         'expired-callback': () => {
           turnstileToken.value = '';
-          console.log('Turnstile token expired');
         },
         'error-callback': () => {
           console.error('Turnstile error');
+          turnstileError.value = true;
         },
       });
-      console.log('Turnstile widget rendered with ID:', turnstileWidgetId.value);
     } catch (error) {
       console.error('Turnstile render error:', error);
+      turnstileError.value = true;
     }
   } else {
     console.warn('Turnstile not available on window object');
@@ -83,6 +90,14 @@ const handleSubmit = async () => {
   errorMessage.value = '';
 
   // Validate Turnstile
+  if (!siteKey) {
+    errorMessage.value = locale.value === 'ar'
+      ? 'خطأ في إعدادات الأمان. يرجى الاتصال بالدعم.'
+      : 'Security configuration error. Please contact support.';
+    submitStatus.value = 'error';
+    return;
+  }
+
   if (!turnstileToken.value) {
     errorMessage.value = locale.value === 'ar' 
       ? 'الرجاء التحقق من أنك لست روبوت' 
@@ -527,6 +542,13 @@ const handleSubmit = async () => {
               </div>
 
               <div id="turnstile-widget" class="min-h-[65px]"></div>
+              <div v-if="turnstileError && !siteKey" class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p class="text-sm text-yellow-800">
+                  {{ locale === 'ar' 
+                    ? 'خطأ في إعدادات الأمان. يرجى الاتصال بالدعم.' 
+                    : 'Security configuration error. Please contact support.' }}
+                </p>
+              </div>
 
               <button
                 type="submit"
