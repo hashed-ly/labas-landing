@@ -30,24 +30,40 @@
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://labas.ly/solutions/dashboard/appointments" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://labas.ly/en/solutions/dashboard/appointments" />
   </url>
   <url>
     <loc>https://labas.ly/solutions/dashboard/booking-info</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://labas.ly/solutions/dashboard/booking-info" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://labas.ly/en/solutions/dashboard/booking-info" />
   </url>
   <url>
     <loc>https://labas.ly/solutions/dashboard/schedules</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://labas.ly/solutions/dashboard/schedules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://labas.ly/en/solutions/dashboard/schedules" />
   </url>
   <url>
     <loc>https://labas.ly/contact</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://labas.ly/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://labas.ly/en/contact" />
+  </url>
+  <url>
+    <loc>https://labas.ly/kyc</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://labas.ly/kyc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://labas.ly/en/kyc" />
   </url>
   <url>
     <loc>https://labas.ly/v1/Privacy-and-Policy</loc>

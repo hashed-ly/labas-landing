@@ -6,7 +6,7 @@ import { useSEO } from '../../composables/useSEO';
 import { useIntersectionObserver } from '../../composables/useIntersectionObserver';
 
 const { t, locale } = useI18n();
-const { updateMetaTags } = useSEO();
+const { updateMetaTags, addStructuredData } = useSEO();
 const { targetRef, isVisible } = useIntersectionObserver();
 
 const formData = ref({
@@ -125,6 +125,26 @@ onMounted(async () => {
     description: isArabic
       ? 'سجل مؤسستك الطبية مع لا باس وابدأ في إدارة عملياتك الصحية بكفاءة'
       : 'Register your medical organization with Labas and start managing your healthcare operations efficiently',
+  });
+  
+  // Add WebPage structured data for KYC page
+  addStructuredData({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: isArabic ? 'تسجيل المؤسسة' : 'Organization Registration',
+    description: isArabic
+      ? 'صفحة تسجيل المؤسسات الطبية في لا باس'
+      : 'Medical organization registration page for Labas',
+  });
+  
+  // Add WebPage structured data for KYC page
+  addStructuredData({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: isArabic ? 'تسجيل المؤسسة' : 'Organization Registration',
+    description: isArabic
+      ? 'صفحة تسجيل المؤسسات الطبية في لا باس'
+      : 'Medical organization registration page for Labas',
   });
 
   await nextTick();

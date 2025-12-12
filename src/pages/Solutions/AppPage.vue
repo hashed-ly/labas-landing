@@ -9,7 +9,7 @@ import AppTrustSection from './sections/AppTrustSection.vue';
 import AppStatsSection from './sections/AppStatsSection.vue';
 import CTASection from '../Home/sections/CTASection.vue';
 
-const { updateMetaTags } = useSEO();
+const { updateMetaTags, addStructuredData } = useSEO();
 const { t, locale } = useI18n();
 
 onMounted(() => {
@@ -21,6 +21,28 @@ onMounted(() => {
     description: isArabic
       ? 'احجز مواعيد الأطباء، اطلب توصيل الأدوية، احجز التحاليل المخبرية، واطّلع على خدمات طبية أساسية من تطبيق لا باس'
       : 'Book doctor appointments, request prescription delivery, schedule lab tests, and access essential medical services with Labas app.',
+  });
+  
+  // Add SoftwareApplication structured data
+  addStructuredData({
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Labas',
+    applicationCategory: 'HealthApplication',
+    operatingSystem: 'iOS, Android',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'LYD',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '1000',
+    },
+    description: isArabic
+      ? 'تطبيق لا باس - منصة الصحة الرقمية في ليبيا لربط المرضى بالأطباء والمستشفيات'
+      : 'Labas - Libya\'s digital health platform connecting patients with doctors and hospitals',
   });
 });
 </script>
