@@ -1015,21 +1015,28 @@
           "laboratory": "مختبر",
           "pharmacy": "صيدلية",
           "radiology": "مركز أشعة",
-          "medicalProvider": "مقدم خدمات طبية",
+          "medicalProvider": "مقدم خدمات طبية ورعاية منزلية",
+          "ambulanceCompany": "شركة إسعاف",
           "other": "أخرى"
         },
         "commercialRegistration": "رقم السجل التجاري",
         "commercialRegistrationPlaceholder": "12345",
         "taxId": "الرقم الضريبي",
         "taxIdPlaceholder": "TAX-123456",
-        "address": "العنوان (المدينة، المنطقة، الشارع)",
-        "addressPlaceholder": "بنغازي، وسط المدينة، شارع الرئيسي",
+        "city": "المدينة",
+        "address": "العنوان (المنطقة، الشارع)",
+        "addressPlaceholder": "وسط المدينة، شارع الرئيسي",
         "email": "البريد الإلكتروني الرسمي",
         "emailPlaceholder": "info{'@'}organization.ly",
         "phone": "رقم الهاتف الرسمي",
         "phonePlaceholder": "+218 91-234-5678",
         "website": "الموقع الإلكتروني (اختياري)",
-        "websitePlaceholder": "https://www.organization.ly"
+        "websitePlaceholder": "https://www.organization.ly",
+        "socialLinks": "روابط وسائل التواصل الاجتماعي (اختياري)",
+        "facebook": "فيسبوك",
+        "facebookPlaceholder": "https://www.facebook.com/organization",
+        "instagram": "إنستغرام",
+        "instagramPlaceholder": "https://www.instagram.com/organization"
       },
       "authorizedPerson": {
         "title": "بيانات الشخص المصرح",
@@ -1056,6 +1063,11 @@
       "terms": {
         "title": "الشروط والأحكام",
         "confirmation": "أؤكد أن جميع المعلومات المقدمة دقيقة وأوافق على سياسات لا باس.",
+        "confirmationPrefix": "أؤكد أن جميع المعلومات المقدمة دقيقة وأوافق على",
+        "confirmationMiddle": "و",
+        "confirmationSuffix": ".",
+        "termsLink": "شروط الاستخدام",
+        "privacyLink": "سياسة الخصوصية",
         "required": "هذا الحقل مطلوب"
       }
     },

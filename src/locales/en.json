@@ -1015,21 +1015,28 @@
           "laboratory": "Laboratory",
           "pharmacy": "Pharmacy",
           "radiology": "Radiology Center",
-          "medicalProvider": "Medical Provider",
+          "medicalProvider": "Medical Provider & Home Care",
+          "ambulanceCompany": "Ambulance Company",
           "other": "Other"
         },
         "commercialRegistration": "Commercial Registration Number",
         "commercialRegistrationPlaceholder": "12345",
         "taxId": "Tax Identification Number",
         "taxIdPlaceholder": "TAX-123456",
-        "address": "Address (City, Area, Street)",
-        "addressPlaceholder": "Benghazi, Downtown, Main Street",
+        "city": "City",
+        "address": "Address (Area, Street)",
+        "addressPlaceholder": "Downtown, Main Street",
         "email": "Official Email",
         "emailPlaceholder": "info{'@'}organization.ly",
         "phone": "Official Phone Number",
         "phonePlaceholder": "+218 91-234-5678",
         "website": "Website (optional)",
-        "websitePlaceholder": "https://www.organization.ly"
+        "websitePlaceholder": "https://www.organization.ly",
+        "socialLinks": "Social Media Links (optional)",
+        "facebook": "Facebook",
+        "facebookPlaceholder": "https://www.facebook.com/organization",
+        "instagram": "Instagram",
+        "instagramPlaceholder": "https://www.instagram.com/organization"
       },
       "authorizedPerson": {
         "title": "Authorized Person Details",
@@ -1056,6 +1063,11 @@
       "terms": {
         "title": "Terms & Conditions",
         "confirmation": "I confirm all provided information is accurate and agree to Labas policies.",
+        "confirmationPrefix": "I confirm all provided information is accurate and agree to",
+        "confirmationMiddle": "and",
+        "confirmationSuffix": ".",
+        "termsLink": "Terms of Use",
+        "privacyLink": "Privacy Policy",
         "required": "This field is required"
       }
     },

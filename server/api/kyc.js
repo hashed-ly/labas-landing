@@ -21,10 +21,13 @@ export default async function handler(req, res) {
     organizationTypeOther,
     commercialRegistrationNumber,
     taxId,
+    city,
     address,
     officialEmail,
     officialPhone,
     website,
+    facebook,
+    instagram,
     authorizedPersonName,
     authorizedPersonPosition,
     authorizedPersonNationalId,
@@ -41,10 +44,8 @@ export default async function handler(req, res) {
   // Authorized Person and Banking sections are hidden and will be re-added later
   if (
     !organizationNameArabic ||
-    !organizationNameEnglish ||
     !organizationType ||
-    !commercialRegistrationNumber ||
-    !address ||
+    !city ||
     !officialEmail ||
     !officialPhone ||
     !termsAccepted ||
@@ -97,14 +98,17 @@ New KYC Registration Submission
 ORGANIZATION INFORMATION
 ========================
 Organization Name (Arabic): ${organizationNameArabic}
-Organization Name (English): ${organizationNameEnglish}
+Organization Name (English): ${organizationNameEnglish || 'Not provided'}
 Type: ${organizationTypeDisplay}
-Commercial Registration Number: ${commercialRegistrationNumber}
-Tax ID: ${taxId || 'Not provided'}
-Address: ${address}
+Commercial Registration Number: ${commercialRegistrationNumber || 'Not provided (section hidden)'}
+Tax ID: ${taxId || 'Not provided (section hidden)'}
+City: ${city}
+Address: ${address || 'Not provided'}
 Official Email: ${officialEmail}
 Official Phone: ${officialPhone}
 Website: ${website || 'Not provided'}
+Facebook: ${facebook || 'Not provided'}
+Instagram: ${instagram || 'Not provided'}
 
 AUTHORIZED PERSON DETAILS
 =========================
@@ -133,10 +137,13 @@ Submitted at: ${new Date().toISOString()}
         organizationType: organizationTypeDisplay,
         commercialRegistrationNumber,
         taxId,
+        city,
         address,
         officialEmail,
         officialPhone,
         website,
+        facebook,
+        instagram,
         authorizedPersonName,
         authorizedPersonPosition,
         authorizedPersonNationalId,
@@ -356,7 +363,7 @@ function generateKYCEmailHTML(data) {
 
           <div class="field">
             <div class="label">🏢 Organization Name (English)</div>
-            <div class="value">${data.organizationNameEnglish}</div>
+            <div class="value">${data.organizationNameEnglish || '<span class="value-empty">Not provided</span>'}</div>
           </div>
 
           <div class="field">
@@ -366,17 +373,22 @@ function generateKYCEmailHTML(data) {
 
           <div class="field">
             <div class="label">📄 Commercial Registration Number</div>
-            <div class="value">${data.commercialRegistrationNumber}</div>
+            <div class="value">${data.commercialRegistrationNumber || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
           </div>
 
           <div class="field">
             <div class="label">🔢 Tax Identification Number</div>
-            <div class="value">${data.taxId || '<span class="value-empty">Not provided</span>'}</div>
+            <div class="value">${data.taxId || '<span class="value-empty">Not provided (section hidden)</span>'}</div>
+          </div>
+
+          <div class="field">
+            <div class="label">🏙️ City</div>
+            <div class="value">${data.city}</div>
           </div>
 
           <div class="field">
             <div class="label">📍 Address</div>
-            <div class="value">${data.address}</div>
+            <div class="value">${data.address || '<span class="value-empty">Not provided</span>'}</div>
           </div>
 
           <div class="field">
@@ -392,6 +404,15 @@ function generateKYCEmailHTML(data) {
           <div class="field">
             <div class="label">🌐 Website</div>
             <div class="value">${data.website ? `<a href="${data.website}" target="_blank">${data.website}</a>` : '<span class="value-empty">Not provided</span>'}</div>
+          </div>
+
+          <div class="field">
+            <div class="label">📱 Social Media Links</div>
+            <div class="value">
+              ${data.facebook ? `<div style="margin-bottom: 8px;"><strong>Facebook:</strong> <a href="${data.facebook}" target="_blank">${data.facebook}</a></div>` : ''}
+              ${data.instagram ? `<div style="margin-bottom: 8px;"><strong>Instagram:</strong> <a href="${data.instagram}" target="_blank">${data.instagram}</a></div>` : ''}
+              ${!data.facebook && !data.instagram ? '<span class="value-empty">Not provided</span>' : ''}
+            </div>
           </div>
         </div>
       </div>
